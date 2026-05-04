@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clarity Privacy Policy</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 720px; margin: 0 auto; padding: 40px 20px; color: #222; line-height: 1.6; }
+  h1 { font-size: 28px; } h2 { font-size: 20px; margin-top: 32px; }
+  a { color: #0066cc; }
+  .meta { color: #666; font-size: 14px; margin-bottom: 24px; }
+</style>
+</head>
+<body>
+<p><a href="/">&larr; Everlight Digital</a></p>
+<h1>Clarity Privacy Policy</h1>
+<p class="meta">Last updated: May 4, 2026</p>
+
+<p>This Privacy Policy describes how Everlight Digital ("we", "us") collects, uses, and shares information when you use the Clarity app ("Clarity").</p>
+
+<h2>Information We Collect</h2>
+<ul>
+  <li><strong>Account information:</strong> Email and authentication identifier when you sign in with Apple, Google, or email/password.</li>
+  <li><strong>Your content:</strong> Tasks, projects, areas, notes, meetings, habits, tags, recurrence rules, daily plans, voice recordings, and meeting transcripts you create.</li>
+  <li><strong>Device data:</strong> Device model, iOS version, app version, and crash logs.</li>
+  <li><strong>AI features:</strong> Text and audio you submit to Ask Claude, Brain Dump, AI summarization, task parsing, and meeting transcription is sent to our server, then to Anthropic's Claude API. Audio is transcribed on-device or via Apple Speech where possible. Transcripts and prompts are not retained after the response is returned.</li>
+</ul>
+
+<h2>How We Use Information</h2>
+<ul>
+  <li>To sync your tasks, notes, and meetings across your devices</li>
+  <li>To generate AI responses, summaries, and parsed task structures you request</li>
+  <li>To send local and push notifications you have enabled</li>
+  <li>To diagnose crashes and improve the app</li>
+  <li>To deliver in-app purchases and manage your subscription</li>
+</ul>
+
+<h2>How We Share Information</h2>
+<ul>
+  <li><strong>Google Firebase</strong> (Authentication, Firestore, Cloud Functions) — backend, sync, AI proxy</li>
+  <li><strong>Apple</strong> (Sign in with Apple, App Store, push notifications) — auth and delivery</li>
+  <li><strong>Anthropic</strong> (Claude API, via our server) — AI responses</li>
+  <li><strong>RevenueCat</strong> — subscription management</li>
+</ul>
+<p>We do not sell your data. We do not run third-party advertising trackers.</p>
+
+<h2>Local Storage</h2>
+<p>Clarity stores your data locally on-device in SwiftData. Cloud sync is optional. If you sign out, local data remains on the device until you uninstall the app.</p>
+
+<h2>Data Retention</h2>
+<p>Deleted tasks, notes, and meetings are kept in Trash for 30 days, then permanently removed. You can delete your account at any time from Settings &gt; Account &gt; Delete Account. Account deletion removes your data from Firestore within 30 days; backups are purged within 90 days.</p>
+
+<h2>Your Rights</h2>
+<p>You can export your data from Settings &gt; Export. EU and UK users have GDPR rights; California users have CCPA rights. Contact <a href="mailto:bpratt116@gmail.com">bpratt116@gmail.com</a> to exercise them.</p>
+
+<h2>Security</h2>
+<p>Data is encrypted in transit (TLS) and at rest. Authentication tokens are stored in iOS Keychain. We do not ship the Anthropic API key in the iOS binary; AI requests are routed through a server proxy.</p>
+
+<h2>Changes to This Policy</h2>
+<p>We may update this policy. Material changes will be announced in-app.</p>
+
+<h2>Contact</h2>
+<p>Everlight Digital<br>Email: <a href="mailto:bpratt116@gmail.com">bpratt116@gmail.com</a></p>
+</body>
+</html>
