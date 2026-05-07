@@ -31,7 +31,7 @@
 <p>Open <em>iOS Settings &rarr; Privacy &amp; Security &rarr; Health &rarr; Regen</em>. Make sure HRV, Resting Heart Rate, Sleep, and Workouts are all enabled. Then force-quit and relaunch Regen.</p>
 
 <h3>Recovery score feels too pessimistic / optimistic.</h3>
-<p>Recovery is computed from HRV, RHR, sleep, and recent training load relative to your personal baseline. It needs ~14 days of data to stabilize. Email us if you think it's miscalibrated after that period.</p>
+<p>Recovery is computed from HRV, RHR, sleep, and recent training load relative to your personal baseline. It needs at least 7 days of data before it will score, and around two weeks to fully stabilize. Email us if you think it's miscalibrated after that period.</p>
 
 <h3>What does "Freshness" mean?</h3>
 <p>Freshness is how rested your body is right now relative to recent training. High freshness = ready for hard efforts. Low freshness = recover before pushing again.</p>
@@ -42,8 +42,14 @@
 <h3>The Watch complication isn't updating.</h3>
 <p>Complications refresh on the Watch's schedule. Force a refresh by opening the Watch app, then re-adding the complication. Make sure Regen has Watch app permissions.</p>
 
+<h3>Do I need an account to use Regen?</h3>
+<p>Yes. Regen uses Sign in with Apple (or email + password) via Firebase Auth so your data syncs across iPhone and Apple Watch and survives a reinstall. Sign in with Apple is recommended.</p>
+
 <h3>Does Regen send my health data to a server?</h3>
-<p>No. All HealthKit data is processed entirely on-device. We have no backend account. See <a href="/regen/privacy.html">privacy</a>.</p>
+<p>The raw HealthKit streams Regen reads (HRV, RHR, sleep stages, heart rate samples) are processed on-device and are not transmitted anywhere by Regen.</p>
+<p>However, the data Regen <em>derives</em> from those streams &mdash; your daily metric summaries (HRV, RHR, sleep duration), workout sessions, morning check-ins, and training goals &mdash; is synced to your private Firebase account so it is available on every device you sign in on. We never sell your data and Regen contains no advertising trackers.</p>
+<p>If you opt into Coach Notes (AI workout analysis), a sanitized summary of the workout is sent through our secure proxy to Anthropic's Claude API to generate the note; the raw HealthKit samples are not sent.</p>
+<p>See <a href="/regen/privacy.html">privacy</a> for the full breakdown.</p>
 
 <h2>Need More Help?</h2>
 <p>Email <a href="mailto:bpratt116@gmail.com">bpratt116@gmail.com</a>.</p>

@@ -14,16 +14,18 @@
 <body>
 <p><a href="/">&larr; Everlight Digital</a></p>
 <h1>Regen Privacy Policy</h1>
-<p class="meta">Last updated: May 4, 2026</p>
+<p class="meta">Last updated: May 6, 2026</p>
 
 <p>This Privacy Policy describes how Everlight Digital ("we", "us") collects, uses, and shares information when you use the Regen recovery dashboard ("Regen") on iPhone and Apple Watch.</p>
 
 <h2>Information We Collect</h2>
 <ul>
-  <li><strong>Health data:</strong> If you grant HealthKit permission, Regen reads heart-rate variability (HRV), resting heart rate (RHR), sleep, active energy, workout history, body mass, and related metrics from Apple Health. Health data is processed entirely on-device. Regen does not transmit your health data to our servers.</li>
-  <li><strong>Check-in data:</strong> Self-reported morning check-ins, session-feel ratings, and notes you enter.</li>
+  <li><strong>Account data:</strong> Regen uses Sign in with Apple or email + password via Firebase Authentication. We store the resulting account identifier and, if applicable, your email address.</li>
+  <li><strong>Health data (read on-device):</strong> If you grant HealthKit permission, Regen reads heart-rate variability (HRV), resting heart rate (RHR), sleep, active energy, workout history, body mass, and related metrics from Apple Health. The raw HealthKit samples are read on-device and are not transmitted by Regen.</li>
+  <li><strong>Derived health summaries (synced to your private Firebase account):</strong> Daily summary metrics (HRV, RHR, sleep duration, training load), workout sessions, morning check-ins, session-feel ratings, and training goals are written to your private Firestore document so they sync across iPhone and Apple Watch and survive a reinstall.</li>
+  <li><strong>AI Coach Notes (optional):</strong> If you use Coach Notes, a sanitized workout summary is sent through our Cloud Functions proxy to Anthropic's Claude API to generate the note. Raw HealthKit samples are not sent.</li>
   <li><strong>Settings:</strong> Unit preferences, dashboard configuration, and notification preferences stored locally.</li>
-  <li><strong>Device data:</strong> Device model, iOS version, watchOS version, app version, and crash logs.</li>
+  <li><strong>Device / diagnostic data:</strong> Device model, iOS version, watchOS version, app version, and crash logs.</li>
 </ul>
 
 <h2>How We Use Information</h2>
@@ -36,10 +38,12 @@
 
 <h2>How We Share Information</h2>
 <ul>
-  <li><strong>Apple HealthKit</strong> — read access only, on-device, controlled by you in iOS Settings &gt; Health</li>
-  <li><strong>Apple</strong> (App Store, push notifications)</li>
+  <li><strong>Apple HealthKit</strong> &mdash; read access only, on-device, controlled by you in iOS Settings &gt; Health</li>
+  <li><strong>Apple</strong> (Sign in with Apple, App Store, push notifications)</li>
+  <li><strong>Google Firebase</strong> (Authentication, Firestore, Cloud Functions) &mdash; processes derived health summaries, check-ins, training goals, workouts, and account data on our behalf</li>
+  <li><strong>Anthropic</strong> &mdash; if you use Coach Notes, a sanitized workout summary is sent through our Cloud Functions proxy to Anthropic's Claude API</li>
 </ul>
-<p>Regen has no backend account system. We do not sell your data. We do not run advertising trackers. Your health and check-in data never leave your devices except where Apple Health itself syncs them via your private iCloud.</p>
+<p>We do not sell your data and Regen contains no advertising trackers. Raw HealthKit samples never leave your device.</p>
 
 <h2>Children</h2>
 <p>Regen is not directed to children under 13 and does not knowingly collect their personal information.</p>
