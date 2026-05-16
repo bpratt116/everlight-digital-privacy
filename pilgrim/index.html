@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pilgrim — Bible &amp; Prayer</title>
+<meta name="description" content="Pilgrim is a Bible reading and prayer app for Reformed-leaning Protestant adults. Free, non-commercial. Built with attribution to ESV, CSB, NIV, NLT, and public-domain translations.">
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 720px; margin: 0 auto; padding: 40px 20px; color: #222; line-height: 1.6; }
+  h1 { font-size: 32px; margin-bottom: 4px; }
+  h2 { font-size: 20px; margin-top: 36px; color: #333; }
+  h3 { font-size: 16px; margin-top: 20px; color: #555; }
+  .tagline { color: #666; margin-bottom: 28px; }
+  .status { background: #f4f8ff; border: 1px solid #cfdfff; padding: 14px 18px; border-radius: 8px; margin: 24px 0; }
+  .status strong { color: #0066cc; }
+  a { color: #0066cc; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 22px; }
+  li { margin: 6px 0; }
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 15px; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #eee; }
+  th { color: #555; font-weight: 600; }
+  .meta { color: #666; font-size: 14px; margin-top: 4px; }
+  footer { margin-top: 48px; color: #888; font-size: 14px; border-top: 1px solid #eee; padding-top: 20px; }
+</style>
+</head>
+<body>
+<p><a href="/">&larr; Everlight Digital</a></p>
+
+<h1>Pilgrim: Bible &amp; Prayer</h1>
+<p class="tagline">A Bible-first iOS app for Reformed-leaning Protestants. Free. Non-commercial. Built around Scripture and the historic confessions.</p>
+
+<div class="status">
+  <strong>Status:</strong> In development. TestFlight beta expected late May 2026. App Store submission to follow once translation licensing is in place.
+</div>
+
+<h2>What Pilgrim Is</h2>
+<p>Pilgrim is a focused iOS app that combines a Bible reader, catechism-paired reading plans, a memory tool for Scripture and confessional Q&amp;A, sermon notes, an answered-prayer log, and small private "Circles" for accountability among trusted friends.</p>
+<p>It is designed for adult Christians — particularly those in the Reformed tradition — who want depth without the cost of professional study tools and without the cluttered social feed of mainstream Bible apps.</p>
+
+<h2>What Pilgrim Is Not</h2>
+<ul>
+  <li>Not a commercial product. There is no In-App Purchase, no subscription, and no advertising in the launch version.</li>
+  <li>Not a Bible publisher. Pilgrim displays Scripture obtained through official, properly-licensed APIs and bundled public-domain translations. We do not redistribute, sell, or modify Scripture text.</li>
+  <li>Not an AI doctrine engine. Pilgrim does not generate theological commentary. All confessional and Scripture text is quoted verbatim from public-domain sources.</li>
+</ul>
+
+<h2>Intended Use of the ESV (English Standard Version)</h2>
+<p>The ESV is one of seven English Bible translations offered to Pilgrim users. We are applying for non-commercial ESV API access from Crossway under the terms published at <a href="https://api.esv.org/">api.esv.org</a>.</p>
+
+<h3>How the ESV is used inside Pilgrim</h3>
+<ul>
+  <li><strong>Display only.</strong> ESV passages are fetched on demand to display inside the app's chapter reader, daily reading-plan rows, and sermon-note context. They are never exported, shared as files, or republished.</li>
+  <li><strong>Cached on the user's device</strong> for offline reading after first download. The cache is encrypted at rest by the iOS sandbox.</li>
+  <li><strong>Server-side cache.</strong> A Cloudflare Worker proxy fronts the api.esv.org endpoint. Cached responses are keyed by passage reference and held for 30 days to minimize repeat traffic, in keeping with the 5,000-requests-per-day cap.</li>
+  <li><strong>Attribution.</strong> Every chapter view that contains ESV text displays the required Crossway attribution and copyright line, in keeping with the API terms.</li>
+  <li><strong>No fee charged for ESV access.</strong> Pilgrim ships free. There is no premium tier, no upsell, and no ad inventory.</li>
+</ul>
+
+<h3>If Pilgrim ever introduces a paid feature</h3>
+<p>The app contains a hard-coded guardrail (<code>ESVTranslationAvailable = !FeatureFlags.paywallEnabled</code>) that automatically removes ESV access if any In-App Purchase is enabled. Before any paid feature ships, we will either negotiate a commercial ESV license with Crossway or drop ESV from the translation list.</p>
+
+<h2>Translations Offered</h2>
+<table>
+  <tr><th>Translation</th><th>Source</th><th>License</th></tr>
+  <tr><td>ESV — English Standard Version</td><td>Crossway via api.esv.org</td><td>Non-commercial API (pending)</td></tr>
+  <tr><td>CSB — Christian Standard Bible</td><td>API.Bible / Lifeway</td><td>Non-commercial API</td></tr>
+  <tr><td>NIV — New International Version</td><td>API.Bible / Biblica</td><td>Non-commercial API</td></tr>
+  <tr><td>NLT — New Living Translation</td><td>API.Bible / Tyndale</td><td>Non-commercial API</td></tr>
+  <tr><td>KJV — King James Version</td><td>Public domain, bundled</td><td>PD</td></tr>
+  <tr><td>ASV — American Standard Version</td><td>Public domain, bundled</td><td>PD</td></tr>
+  <tr><td>WEB — World English Bible</td><td>Public domain, bundled</td><td>PD</td></tr>
+</table>
+
+<h2>Confessional Content</h2>
+<p>Reading plans and the memory tool pair Scripture with question-and-answer text from public-domain confessional sources:</p>
+<ul>
+  <li>Heidelberg Catechism (1563)</li>
+  <li>Westminster Shorter Catechism (1647)</li>
+  <li>Westminster Larger Catechism (1648)</li>
+  <li>Westminster Confession of Faith (1647)</li>
+  <li>Belgic Confession (1561)</li>
+  <li>Canons of Dort (1619)</li>
+  <li>1689 London Baptist Confession</li>
+  <li>Apostles' and Nicene Creeds (BCP 1662 English)</li>
+</ul>
+<p>All confessional text is quoted verbatim from public-domain editions. No modern, copyrighted translations are used.</p>
+
+<h2>Privacy</h2>
+<p>Pilgrim does not collect personal data on a server. The app uses iCloud (your Apple ID) for sync and CloudKit shared zones for private "Circles." We have no server-side user database. See the <a href="/pilgrim/privacy.html">Pilgrim privacy addendum</a> for details.</p>
+
+<h2>Developer</h2>
+<p>Pilgrim is built by Brendan Pratt under <a href="/">Everlight Digital</a>, a sole-proprietor iOS studio based in the United States. Pilgrim is an independent project with no church, denomination, or publisher affiliation.</p>
+
+<h2>Contact</h2>
+<p>For licensing questions, partnership inquiries, or Crossway/API.Bible verification:
+<br><a href="mailto:bpratt116@gmail.com">bpratt116@gmail.com</a></p>
+
+<footer>
+  <p>&copy; 2026 Everlight Digital. Pilgrim is a trademark in use of Everlight Digital.</p>
+  <p>Scripture quotations from the ESV<sup>&reg;</sup> Bible (The Holy Bible, English Standard Version<sup>&reg;</sup>), copyright &copy; 2001 by Crossway, a publishing ministry of Good News Publishers. Used by permission. All rights reserved.</p>
+</footer>
+</body>
+</html>
