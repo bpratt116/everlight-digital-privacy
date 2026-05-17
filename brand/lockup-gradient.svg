@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 200" width="720" height="200" role="img" aria-label="Everlight Digital — horizontal lockup, on gradient">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5B042"></stop>
+      <stop offset="45%" stop-color="#EE5A6F"></stop>
+      <stop offset="100%" stop-color="#7C3AED"></stop>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="720" height="200" fill="url(#bg)"></rect>
+  <g transform="translate(16,20) scale(0.8)" fill="none" stroke="#FFFFFF" stroke-width="20" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M48 132 L100 80 L152 132"></path>
+    <path d="M62 168 L100 130 L138 168" opacity="0.55"></path>
+  </g>
+  <text x="200" y="118" font-family="Manrope, ui-sans-serif, system-ui, sans-serif" font-weight="600" font-size="76" fill="#FFFFFF" letter-spacing="-1.5">everlight</text>
+  <text x="202" y="156" font-family="Manrope, ui-sans-serif, system-ui, sans-serif" font-weight="500" font-size="22" fill="#FFFFFF" fill-opacity="0.7" letter-spacing="7">DIGITAL</text>
+</svg>

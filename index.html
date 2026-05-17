@@ -3,50 +3,152 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Everlight Digital — Privacy Policies</title>
+<title>Everlight Digital</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0E0B14">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 720px; margin: 0 auto; padding: 40px 20px; color: #222; line-height: 1.6; }
-  h1 { font-size: 32px; margin-bottom: 8px; }
-  h2 { font-size: 18px; margin-top: 36px; color: #444; }
-  .tagline { color: #666; margin-bottom: 32px; }
-  .primary { background: #f4f8ff; border: 1px solid #cfdfff; padding: 16px 20px; border-radius: 8px; margin: 16px 0 28px; }
-  .primary a { font-weight: 600; font-size: 17px; }
-  ul { list-style: none; padding: 0; }
-  li { padding: 12px 0; border-bottom: 1px solid #eee; }
-  a { color: #0066cc; text-decoration: none; font-weight: 500; }
-  a:hover { text-decoration: underline; }
-  footer { margin-top: 48px; color: #888; font-size: 14px; }
+  :root {
+    --el-gradient: linear-gradient(135deg, #F5B042 0%, #EE5A6F 45%, #7C3AED 100%);
+    --el-gradient-text: linear-gradient(95deg, #F5B042 0%, #EE5A6F 50%, #7C3AED 100%);
+    --el-ink: #0E0B14;
+    --el-graphite: #2A2530;
+    --el-stone: #7A7480;
+    --el-mist: #D6D2C8;
+    --el-cream: #F4EFE6;
+    --el-paper: #FFFFFF;
+    --el-font: 'Manrope', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: var(--el-font);
+    color: var(--el-ink);
+    background: var(--el-paper);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .hero {
+    background: var(--el-gradient);
+    color: var(--el-paper);
+    padding: 56px 24px 72px;
+    text-align: center;
+  }
+  .hero .lockup { display: block; margin: 0 auto 24px; width: 320px; max-width: 80%; height: auto; }
+  .hero p {
+    max-width: 520px;
+    margin: 0 auto;
+    font-size: 17px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.92);
+  }
+  main { max-width: 720px; margin: 0 auto; padding: 48px 24px 24px; }
+  h2 {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--el-stone);
+    margin: 40px 0 16px;
+  }
+  h2:first-child { margin-top: 0; }
+  .primary-grid { display: grid; gap: 12px; grid-template-columns: 1fr 1fr; }
+  @media (max-width: 540px) { .primary-grid { grid-template-columns: 1fr; } }
+  .card {
+    display: block;
+    background: var(--el-cream);
+    border: 1px solid rgba(14,11,20,0.06);
+    border-radius: 14px;
+    padding: 20px 22px;
+    text-decoration: none;
+    color: var(--el-ink);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+  }
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(14,11,20,0.08);
+    border-color: rgba(124,58,237,0.25);
+  }
+  .card .title { font-weight: 700; font-size: 17px; display: flex; align-items: center; gap: 8px; }
+  .card .title::after { content: "→"; color: var(--el-stone); font-weight: 500; transition: transform 0.15s ease; }
+  .card:hover .title::after { transform: translateX(4px); color: #7C3AED; }
+  .card .sub { color: var(--el-graphite); font-size: 14px; margin-top: 4px; }
+  .app-list { list-style: none; padding: 0; margin: 0; }
+  .app-list li {
+    border-bottom: 1px solid rgba(14,11,20,0.08);
+  }
+  .app-list li:last-child { border-bottom: none; }
+  .app-list a {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 4px;
+    color: var(--el-ink);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+  }
+  .app-list a:hover { color: #7C3AED; }
+  .app-list .mark {
+    width: 28px;
+    height: 28px;
+    flex: 0 0 28px;
+    opacity: 0.85;
+  }
+  footer {
+    max-width: 720px;
+    margin: 48px auto 0;
+    padding: 24px;
+    border-top: 1px solid rgba(14,11,20,0.08);
+    color: var(--el-stone);
+    font-size: 14px;
+    text-align: center;
+  }
+  footer a { color: var(--el-graphite); text-decoration: none; font-weight: 600; }
+  footer a:hover { color: #7C3AED; }
 </style>
 </head>
 <body>
-<h1>Everlight Digital</h1>
-<p class="tagline">Privacy policies and legal notices for our apps.</p>
 
-<div class="primary">
-  <a href="/privacy.html">Master Privacy Policy &rarr;</a>
-  <p style="margin: 6px 0 0; color: #555; font-size: 14px;">Covers all Everlight Digital apps. The single source of truth.</p>
-</div>
+<header class="hero">
+  <img class="lockup" src="/brand/lockup-gradient.svg" alt="Everlight Digital">
+  <p>Calm, honest software. Privacy policies and support for our apps.</p>
+</header>
 
-<div class="primary">
-  <a href="/support.html">Support &rarr;</a>
-  <p style="margin: 6px 0 0; color: #555; font-size: 14px;">Help, FAQ, and contact for every app.</p>
-</div>
+<main>
+  <h2>Start Here</h2>
+  <div class="primary-grid">
+    <a class="card" href="/privacy.html">
+      <div class="title">Privacy Policy</div>
+      <div class="sub">Master policy covering every Everlight Digital app.</div>
+    </a>
+    <a class="card" href="/support.html">
+      <div class="title">Support</div>
+      <div class="sub">Help, FAQ, and contact for every app.</div>
+    </a>
+  </div>
 
-<h2>App-Specific Addenda</h2>
-<ul>
-  <li><a href="/olive/privacy.html">Olive — Family Organizer</a></li>
-  <li><a href="/clarity/privacy.html">Clarity — AI Task Manager</a></li>
-  <li><a href="/halcyon/privacy.html">Halcyon — Weather</a></li>
-  <li><a href="/persue-bible/privacy.html">Persue Bible</a></li>
-  <li><a href="/persue-prayer/privacy.html">Persue Prayer</a></li>
-  <li><a href="/pilgrim/">Pilgrim — Bible &amp; Prayer</a></li>
-  <li><a href="/regen/privacy.html">Regen — Recovery Dashboard</a></li>
-  <li><a href="/wordfind/privacy.html">WordFind — Daily Word Search</a></li>
-</ul>
+  <h2>Apps</h2>
+  <ul class="app-list">
+    <li><a href="/olive/privacy.html"><img class="mark" src="/brand/beacon-gradient.svg" alt="">Olive — Family Organizer</a></li>
+    <li><a href="/clarity/privacy.html"><img class="mark" src="/brand/beacon-gradient.svg" alt="">Clarity — AI Task Manager</a></li>
+    <li><a href="/halcyon/privacy.html"><img class="mark" src="/brand/beacon-gradient.svg" alt="">Halcyon — Weather</a></li>
+    <li><a href="/persue-bible/privacy.html"><img class="mark" src="/brand/beacon-gradient.svg" alt="">Persue Bible</a></li>
+    <li><a href="/persue-prayer/privacy.html"><img class="mark" src="/brand/beacon-gradient.svg" alt="">Persue Prayer</a></li>
+    <li><a href="/pilgrim/"><img class="mark" src="/brand/beacon-gradient.svg" alt="">Pilgrim — Bible &amp; Prayer</a></li>
+    <li><a href="/regen/privacy.html"><img class="mark" src="/brand/beacon-gradient.svg" alt="">Regen — Recovery Dashboard</a></li>
+    <li><a href="/wordfind/privacy.html"><img class="mark" src="/brand/beacon-gradient.svg" alt="">WordFind — Daily Word Search</a></li>
+  </ul>
+</main>
 
 <footer>
   <p>Contact: <a href="mailto:bpratt116@gmail.com">bpratt116@gmail.com</a></p>
   <p>&copy; 2026 Everlight Digital. All rights reserved.</p>
 </footer>
+
 </body>
 </html>

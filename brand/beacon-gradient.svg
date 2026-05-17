@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="512" height="512" role="img" aria-label="Everlight Digital beacon mark">
+  <defs>
+    <linearGradient id="el" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#F5B042"></stop>
+      <stop offset="45%" stop-color="#EE5A6F"></stop>
+      <stop offset="100%" stop-color="#7C3AED"></stop>
+    </linearGradient>
+  </defs>
+  <g fill="none" stroke="url(#el)" stroke-width="20" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M48 132 L100 80 L152 132"></path>
+    <path d="M62 168 L100 130 L138 168" opacity="0.45"></path>
+  </g>
+</svg>
