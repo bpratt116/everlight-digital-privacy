@@ -10,96 +10,25 @@
 <meta name="theme-color" content="#0E0B14">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --el-gradient: linear-gradient(135deg, #F5B042 0%, #EE5A6F 45%, #7C3AED 100%);
-    --el-ink: #0E0B14;
-    --el-graphite: #2A2530;
-    --el-stone: #7A7480;
-    --el-cream: #F4EFE6;
-    --el-paper: #FFFFFF;
-    --el-font: 'Manrope', ui-sans-serif, system-ui, -apple-system, sans-serif;
-  }
-  * { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; }
-  body {
-    font-family: var(--el-font);
-    color: var(--el-ink);
-    background: var(--el-paper);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
-  .topbar {
-    background: var(--el-gradient);
-    padding: 18px 24px;
-  }
-  .topbar a {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    color: var(--el-paper);
-    font-weight: 600;
-    font-size: 14px;
-    letter-spacing: 0.04em;
-  }
-  .topbar img { height: 28px; width: auto; }
-  main { max-width: 720px; margin: 0 auto; padding: 40px 24px 24px; }
-  h1 { font-size: 36px; font-weight: 800; letter-spacing: -0.02em; margin: 0 0 6px; }
-  .meta { color: var(--el-stone); font-size: 15px; margin: 0 0 28px; }
-  h2 {
-    font-size: 13px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-    color: var(--el-stone);
-    margin: 36px 0 14px;
-  }
-  h3 { font-size: 17px; font-weight: 700; margin: 24px 0 6px; color: var(--el-ink); }
-  p { margin: 0 0 12px; color: var(--el-graphite); }
-  a { color: #7C3AED; font-weight: 500; }
-  a:hover { text-decoration: underline; }
-  .contact-box {
-    background: var(--el-cream);
-    border: 1px solid rgba(14,11,20,0.06);
-    border-radius: 14px;
-    padding: 18px 22px;
-    margin: 16px 0 28px;
-  }
-  .contact-box a { font-weight: 700; font-size: 17px; }
-  .contact-box .sub { color: var(--el-stone); font-size: 14px; margin-top: 6px; }
-  ul { padding-left: 20px; color: var(--el-graphite); }
-  ul li { margin: 4px 0; }
-  .app-list { list-style: none; padding: 0; }
-  .app-list li { padding: 10px 0; border-bottom: 1px solid rgba(14,11,20,0.08); }
-  .app-list li:last-child { border-bottom: none; }
-  .app-list a { font-weight: 600; color: var(--el-ink); text-decoration: none; }
-  .app-list a:hover { color: #7C3AED; }
-  footer {
-    max-width: 720px;
-    margin: 48px auto 0;
-    padding: 24px;
-    border-top: 1px solid rgba(14,11,20,0.08);
-    color: var(--el-stone);
-    font-size: 14px;
-    text-align: center;
-  }
-  footer a { color: var(--el-graphite); font-weight: 600; text-decoration: none; }
-  footer a:hover { color: #7C3AED; }
-</style>
+<link rel="stylesheet" href="/brand/site.css">
 </head>
 <body>
 
 <header class="topbar">
-  <a href="/"><img src="/brand/lockup-gradient.svg" alt="Everlight Digital"></a>
+  <div class="topbar-inner">
+    <a class="brand" href="/"><img src="/brand/lockup-gradient.svg" alt="Everlight Digital"></a>
+    <nav>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/support.html">Support</a>
+    </nav>
+  </div>
 </header>
 
 <main>
   <h1>Support</h1>
   <p class="meta">Help and contact for Everlight Digital apps.</p>
 
-  <div class="contact-box">
+  <div class="card accent">
     Email: <a href="mailto:bpratt116@gmail.com">bpratt116@gmail.com</a>
     <div class="sub">Typical reply within 1–2 business days.</div>
   </div>
@@ -116,12 +45,13 @@
   </ul>
 
   <h2>App-Specific Support</h2>
-  <ul class="app-list">
+  <ul class="link-list">
     <li><a href="/olive/support.html">Olive — Family Organizer</a></li>
     <li><a href="/clarity/support.html">Clarity — AI Task Manager</a></li>
     <li><a href="/halcyon/support.html">Halcyon — Weather</a></li>
     <li><a href="/persue-bible/support.html">Persue Bible</a></li>
     <li><a href="/persue-prayer/support.html">Persue Prayer</a></li>
+    <li><a href="/pilgrim/support.html">Pilgrim — Bible &amp; Prayer</a></li>
     <li><a href="/regen/support.html">Regen — Recovery Dashboard</a></li>
     <li><a href="/wordfind/support.html">WordFind — Daily Word Search</a></li>
   </ul>
@@ -144,8 +74,9 @@
   <p>Email <a href="mailto:bpratt116@gmail.com">bpratt116@gmail.com</a>. Feedback is read directly by the developer.</p>
 </main>
 
-<footer>
-  <p>&copy; 2026 Everlight Digital · <a href="/privacy.html">Privacy</a> · <a href="/">Home</a></p>
+<footer class="site-footer">
+  <p>Contact: <a href="mailto:bpratt116@gmail.com">bpratt116@gmail.com</a></p>
+  <p class="legal">&copy; 2026 Everlight Digital · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a> · <a href="/">Home</a></p>
 </footer>
 
 </body>
