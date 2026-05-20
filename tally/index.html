@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tally — Budget App for Individuals and Couples</title>
+<meta name="description" content="Tally is a zero-based envelope budgeting app for iOS. Built for individuals and for couples, with optional real-time household sync and optional Plaid-powered bank-transaction import.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0E0B14">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="/brand/site.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/"><img src="/brand/lockup-gradient.svg" alt="Everlight Digital"></a>
+    <nav>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/support.html">Support</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<h1>Tally: Budget App for Individuals and Couples</h1>
+<p class="meta">A zero-based envelope budgeting app for iOS. Honest pricing, calm design, optional real-time household sync for couples, and optional Plaid-powered bank-transaction import so you spend a few minutes a week on money instead of an hour.</p>
+
+<div class="card accent">
+  <strong>Status:</strong> In active development. TestFlight beta and App Store submission planned for 2026. Manual-entry budgeting and iCloud household sync are shipped in code. Plaid integration is a Sprint 1 feature and requires Plaid Production approval — this page accompanies that application.
+</div>
+
+<h2>What Tally Does</h2>
+<p>Tally is built for one specific job: helping a person (or two people sharing a household) plan and track every dollar of income, in named envelopes, from their phone.</p>
+<ul>
+  <li><strong>Zero-based envelope budgeting.</strong> Every dollar of income is assigned to a named envelope — Groceries, Rent, Gas, Sinking Fund, and so on. When an envelope is empty, spending stops.</li>
+  <li><strong>Solo or shared, your call.</strong> A single user can run an entire budget on one phone. A couple can opt into a shared "household" so both partners see the same envelopes, the same balances, and the same transactions in real time. Built on a private iCloud CloudKit shared zone; no third-party social layer.</li>
+  <li><strong>Per-transaction tagging.</strong> Each transaction can be tagged to a person or kept generic — useful for couples splitting contribution and spending, and equally useful for a solo user separating personal from business spending.</li>
+  <li><strong>Sinking funds, rules, and recurring transactions.</strong> Predictable bills, irregular savings (car repair, Christmas, insurance premium), and rule-based payee → envelope categorization are all first-class.</li>
+  <li><strong>Plain-English insights and benchmarks.</strong> Tally compares spending against published guidance (Dave Ramsey, BLS Consumer Expenditure Survey, USDA food plans, CFPB) and offers gentle tips when an envelope is consistently overrun.</li>
+</ul>
+
+<h2>Who Tally Is For</h2>
+<p>The target user is a U.S.-based adult who wants a calm, opinionated budgeting app and is willing to assign every dollar to an envelope. This includes:</p>
+<ul>
+  <li><strong>Solo budgeters</strong> — single, divorced, widowed, or sharing a roof but not finances — who want zero-based budgeting without a spouse on the account.</li>
+  <li><strong>Couples</strong> in their 20s, 30s, or 40s who want their partner on the same screen, with the same data, on day one — not as an upsell.</li>
+  <li>People who have rejected the spreadsheet but also rejected Monarch's "investment dashboard" sprawl and YNAB's $99/yr price.</li>
+  <li>Former <em>EveryDollar</em> or Mint users who want something that respects an envelope model.</li>
+</ul>
+<p>Tally is U.S.-only at launch (Plaid coverage and bank routing assume USD).</p>
+
+<h2>How Plaid Is Used Inside Tally</h2>
+<p>Plaid is an <strong>optional</strong> feature reserved for the paid tier. The free tier is a complete manual-entry budgeting app — Plaid is not required to use Tally.</p>
+
+<h3>Plaid products requested</h3>
+<ul>
+  <li><strong>Link</strong> — for the bank connection UX.</li>
+  <li><strong>Transactions</strong> — the only data product Tally actually consumes. Tally fetches the transaction stream from the user's connected checking, savings, and credit card accounts, then matches each transaction to a budget envelope (or queues it for the user to assign).</li>
+  <li><strong>Auth and Identity</strong> are <em>not</em> requested. Tally does not initiate ACH transfers, does not move money, and does not need account/routing numbers.</li>
+  <li><strong>Investments, Liabilities, Income, and Assets</strong> are <em>not</em> requested. Tally is a zero-based budgeting app — net-worth tracking and investment dashboards are deliberately out of scope.</li>
+</ul>
+
+<h3>End-to-end flow</h3>
+<ol>
+  <li>The user (paid tier only) taps "Connect a bank" inside Tally's settings.</li>
+  <li>Plaid Link runs inside the app and returns a <code>public_token</code>.</li>
+  <li>Tally's iOS client posts the <code>public_token</code> over HTTPS to <code>tally-finance-worker</code>, a Cloudflare Worker we operate. The Worker exchanges the public token for an <code>access_token</code> using our Plaid client secret, which is stored only as a Worker secret and never embedded in the iOS binary.</li>
+  <li>The Worker stores the encrypted <code>access_token</code> keyed by the user's CloudKit user record ID. It returns only an opaque connection ID to the client.</li>
+  <li>On schedule (and on user pull-to-refresh), the Worker calls <code>/transactions/sync</code>, returns the delta to the iOS client, and the client writes those transactions into the user's CloudKit data — either the private budget zone (solo user) or the shared household zone (couple).</li>
+  <li>The user (or our rule engine) assigns each new transaction to a budget envelope. The envelope's "spent" total updates in real time.</li>
+</ol>
+
+<h3>Data Tally stores from Plaid</h3>
+<p>For each imported transaction Tally keeps: amount, currency, merchant name as returned by Plaid, posted date, account name (e.g. "Chase Checking ...4321"), and a Plaid-assigned category that we then map to the user's envelope. Tally does <strong>not</strong> store the user's bank login credentials, full account numbers, routing numbers, balance history beyond the most recent balance, or any investment, loan, or identity data.</p>
+
+<h3>Where the data lives</h3>
+<ul>
+  <li><strong>iOS device.</strong> Transactions render from the user's CloudKit data, which is encrypted at rest by iCloud.</li>
+  <li><strong>CloudKit (the user's iCloud).</strong> Tally has no third-party server-side user database. Budget data, envelopes, and transactions live inside the user's iCloud account. Couples who opt into household sharing do so via Apple's CKShare flow into a private CloudKit shared zone — solo users never create a shared zone.</li>
+  <li><strong>Cloudflare Worker (<code>tally-finance-worker</code>).</strong> Stores only the encrypted Plaid <code>access_token</code> and a small cursor for incremental sync. No transaction history, no PII, no merchant data is retained server-side once delivered to the iOS client.</li>
+</ul>
+
+<h3>Retention and deletion</h3>
+<p>If a user disconnects a bank inside Tally, the iOS client calls <code>/item/remove</code> on Plaid via the Worker and the Worker immediately deletes the stored <code>access_token</code>. Transactions already imported into the user's CloudKit data stay with the user (they own their budget history) unless the user deletes the budget or their Apple ID. There is no marketing pipeline, no analytics broker, and no sale of data — see the <a href="/privacy.html">master privacy policy</a>.</p>
+
+<h2>Security</h2>
+<ul>
+  <li>All client ↔ Worker traffic is HTTPS / TLS 1.2+.</li>
+  <li>Plaid client secrets are stored as Cloudflare Worker environment secrets — never shipped in the iOS binary, never returned to the client.</li>
+  <li>Plaid <code>access_token</code>s are encrypted at rest using Worker KV encryption and keyed per-user.</li>
+  <li>Couples opting into household sharing do so via Apple's CKShare invite flow inside Tally. The shared zone is only visible to the inviter and the explicitly invited partner — no public discovery, no friend graph. Solo users never expose their data to anyone.</li>
+  <li>Tally has no advertising SDK, no analytics SDK that ingests financial data, and no third-party trackers.</li>
+</ul>
+
+<h2>Pricing</h2>
+<table>
+  <tr><th>Tier</th><th>What's included</th><th>Price</th></tr>
+  <tr><td>Free</td><td>Manual transaction entry, single user, unlimited envelopes, dashboard.</td><td>$0</td></tr>
+  <tr><td>Paid</td><td>Everything in Free, plus optional household sync for couples, Plaid bank-link auto-import, rule-engine learning, recurring transactions, and insights.</td><td>$59.99 / yr <em>or</em> $179.99 one-time lifetime (first 1,000 customers only)</td></tr>
+</table>
+
+<h2>Privacy and Terms</h2>
+<p>Tally is governed by the Everlight Digital <a href="/privacy.html">privacy policy</a> and <a href="/terms.html">terms of use</a>. Tally-specific items (Plaid use, CloudKit shared zone, retention) are described above and supersede the master policy only where it is more specific.</p>
+
+<h2>Developer</h2>
+<p>Tally is built by Brendan Pratt under <a href="/">Everlight Digital</a>, a sole-proprietor iOS studio based in the United States. Tally is an independent project with no bank, credit-card, or financial-institution affiliation.</p>
+
+<h2>Contact</h2>
+<p>For Plaid review verification, partnership inquiries, or general questions:
+<br><a href="mailto:brendan@everlight-digital.com">brendan@everlight-digital.com</a></p>
+
+</main>
+
+<footer class="site-footer">
+  <p>Contact: <a href="mailto:brendan@everlight-digital.com">brendan@everlight-digital.com</a></p>
+  <p class="legal">&copy; 2026 Everlight Digital &middot; <a href="/privacy.html">Privacy</a> &middot; <a href="/support.html">Support</a> &middot; <a href="/">Home</a></p>
+</footer>
+
+</body>
+</html>
