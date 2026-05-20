@@ -27,7 +27,7 @@
 <main>
 
 <h1>Everlight Digital Privacy Policy</h1>
-<p class="meta">Last updated: May 4, 2026 &nbsp;&middot;&nbsp; Effective: May 4, 2026</p>
+<p class="meta">Last updated: May 19, 2026 &nbsp;&middot;&nbsp; Effective: May 19, 2026</p>
 
 <p>Everlight Digital ("we", "us", "our") publishes a family of mobile apps for iPhone, iPad, and Apple Watch. This Privacy Policy explains what information we collect, how we use it, and your rights. It applies to all apps we publish, including:</p>
 
@@ -35,6 +35,7 @@
   <li><strong>Olive</strong> — family organizer (tasks, meals, calendars, Kid Mode)</li>
   <li><strong>Clarity</strong> — AI-powered task and notes manager</li>
   <li><strong>Halcyon</strong> — weather app with radar</li>
+  <li><strong>Honeycomb</strong> — couples zero-based budgeting (in development)</li>
   <li><strong>Persue Bible</strong> — Bible reader with reading plans</li>
   <li><strong>Persue Prayer</strong> — prayer journal and devotional app</li>
   <li><strong>Regen</strong> — recovery and training-load dashboard</li>
@@ -129,6 +130,8 @@
   <tr><td>RevenueCat</td><td>Subscription management</td><td>Apps with subscriptions</td></tr>
   <tr><td>Google AdMob</td><td>Advertising</td><td>Halcyon (and WordFind if/when ads enabled)</td></tr>
   <tr><td>RainViewer</td><td>Radar tile data</td><td>Halcyon</td></tr>
+  <tr><td>Plaid</td><td>Bank-account linking and transaction import (Transactions product only; no Auth, Identity, Investments, or Liabilities). Optional, Pro-tier only.</td><td>Honeycomb</td></tr>
+  <tr><td>Cloudflare (Workers, Workers KV)</td><td>Encrypted Plaid access-token storage and proxied Plaid API calls so credentials never ship in the iOS binary.</td><td>Honeycomb</td></tr>
 </table>
 
 <p>Anthropic API keys are <strong>never</strong> shipped inside our iOS apps; AI requests are routed through a secured Cloud Functions proxy hosted on Google Firebase.</p>
@@ -137,6 +140,16 @@
 <p>Regen reads health data from Apple HealthKit when you grant permission. Health data is processed entirely on-device. We do not transmit, store, or share your HealthKit data.</p>
 <p>You can revoke HealthKit access at any time in <em>iOS Settings &gt; Privacy &amp; Security &gt; Health &gt; Regen</em>.</p>
 <p>Persue Prayer's mortification (sin tracking) entries and accountability check-ins are sensitive personal-reflection content. They are excluded from Spotlight indexing and stored in your private iCloud (CloudKit) container.</p>
+
+<h3>Honeycomb Financial Data (Plaid)</h3>
+<p>Honeycomb users on the Pro tier may optionally connect a bank, credit card, or other financial account through <a href="https://plaid.com/legal/">Plaid</a> to import transactions into their budget. When you connect an account:</p>
+<ul>
+  <li>Plaid Link runs inside Honeycomb. You authenticate directly with your financial institution through Plaid; Honeycomb never sees your bank credentials.</li>
+  <li>Plaid returns a token which our Cloudflare Worker (<code>honeycomb-finance-worker</code>) exchanges for an access token. The access token is encrypted at rest in Cloudflare Workers KV, keyed per user. No copy of the token is stored on your device or in our other systems.</li>
+  <li>Honeycomb requests only the Plaid <strong>Transactions</strong> product. We do not request Auth, Identity, Investments, Liabilities, Income, or Assets. Honeycomb cannot initiate ACH transfers or move money.</li>
+  <li>For each transaction we receive amount, merchant name, posted date, account name, and Plaid's category suggestion. These are stored inside the user's iCloud (CloudKit) shared household zone so both spouses can categorize them.</li>
+  <li>Disconnecting a bank inside Honeycomb deletes the Plaid item and the stored access token immediately. Previously-imported transactions remain inside the user's CloudKit budget data until the user deletes them or removes the household.</li>
+</ul>
 
 <h2 id="location">6. Location Data</h2>
 <p>Halcyon requests location permission to fetch local weather. Your location is sent to Apple WeatherKit (and RainViewer for radar) to retrieve forecast data. We do not retain location on our servers. You can deny or revoke permission in <em>iOS Settings &gt; Privacy &amp; Security &gt; Location Services</em>.</p>
@@ -207,6 +220,7 @@ Website: <a href="https://everlight-digital.com">everlight-digital.com</a></p>
   <li><a href="/olive/privacy.html">Olive</a> — household sharing, AI proxy, Kid Mode, analytics opt-out</li>
   <li><a href="/clarity/privacy.html">Clarity</a> — local-first SwiftData, AI features, voice transcription</li>
   <li><a href="/halcyon/privacy.html">Halcyon</a> — location, ads, ATT</li>
+  <li><a href="/honeycomb/">Honeycomb</a> — couples sharing via CloudKit, optional Plaid bank linking, no advertising</li>
   <li><a href="/persue-bible/privacy.html">Persue Bible</a> — Firebase Auth + CloudKit data</li>
   <li><a href="/persue-prayer/privacy.html">Persue Prayer</a> — sensitive content handling, biometric lock</li>
   <li><a href="/regen/privacy.html">Regen</a> — HealthKit on-device only</li>
