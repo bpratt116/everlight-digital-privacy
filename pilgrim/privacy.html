@@ -27,45 +27,75 @@
 <main>
 
 <h1>Pilgrim Privacy Policy</h1>
-<p class="meta">Last updated: May 15, 2026</p>
+<p class="meta">Last updated: June 8, 2026</p>
 
 <p>This Privacy Policy describes how Everlight Digital ("we", "us") handles information when you use the Pilgrim: Bible &amp; Prayer iOS app.</p>
 
-<h2>What We Collect</h2>
-<p><strong>Nothing on our servers.</strong> Pilgrim has no user accounts, no analytics, no advertising, and no server-side database that Everlight Digital operates.</p>
-
-<h2>What Stays on Your Device + iCloud</h2>
+<h2>Accounts &amp; Sign-In</h2>
+<p>Pilgrim works fully without an account — your reading, highlights, notes, and prayers live on your device. If you want to sync across your devices, or connect with friends and groups, you can create a free account. You can sign in two ways:</p>
 <ul>
-  <li><strong>Your highlights, notes, sermon notes, prayer requests, reading-plan progress, and memory-card progress</strong> are stored locally on your device and synced through your iCloud account using Apple's CloudKit private database. Only you can read them.</li>
-  <li><strong>Private Circles.</strong> If you create or join a Circle (an invite-only group of up to 12 members), posts in that Circle are stored in an Apple CloudKit shared zone that only members of that Circle can read. Everlight Digital cannot read this content.</li>
-  <li><strong>Display name.</strong> The name you set in Pilgrim's profile is visible only to other members of any Circles you join. It is not shared with Everlight Digital.</li>
+  <li><strong>Email</strong> — we send a 6-digit code to your email address to sign you in; there is no password.</li>
+  <li><strong>Sign in with Apple</strong> — Apple shares a private identifier with us instead of your real email. You may choose to hide your email through Apple's relay.</li>
 </ul>
+<p>You can use the app indefinitely without ever creating an account.</p>
+
+<h2>What We Collect</h2>
+<p>When you sign in, the following is stored on our servers (operated for us by Railway — see Third-Party Services):</p>
+<ul>
+  <li><strong>Email address or Apple identifier</strong> — used only to sign you in and, for email sign-in, to send your one-time login codes.</li>
+  <li><strong>An account identifier</strong> — a user ID we generate to associate your synced data with your account.</li>
+  <li><strong>Your synced content</strong> — the highlights, Bible notes, sermon notes, prayer requests, journal entries, saved plans, reading-plan progress, and memory-card progress you create. This is stored so it can sync to your other devices.</li>
+  <li><strong>Profile</strong> — if you use the community features, an optional display name, short bio, and profile photo so friends and group members can recognize you.</li>
+  <li><strong>Friends, groups &amp; shared content</strong> — if you add a friend, join or create a group, or share a reading plan or prayer list, we store those connections, the invite codes used, and the items you chose to share so the people you shared with can see them.</li>
+  <li><strong>PDF attachments</strong> — if you attach a PDF to a prayer request, the file is stored so you (and anyone you shared it with) can open it.</li>
+  <li><strong>Device push token</strong> — if you enable notifications for shared prayer-time reminders, we store the Apple-issued push token for your device so we can send those reminders.</li>
+</ul>
+<p>We collect <strong>no</strong> analytics, advertising data, location, contacts, browsing history, or device tracking identifiers.</p>
+
+<h2>What Stays Only on Your Device</h2>
+<ul>
+  <li>If you never sign in, none of your content leaves your device.</li>
+  <li>Personal prayer reminders (e.g. "pray at 8&nbsp;pm") are scheduled by your own device as local notifications — they are not sent to our servers. (Shared <em>group</em> prayer-time reminders are sent as push notifications, which require the device token described above.)</li>
+</ul>
+
+<h2>How We Use Your Information</h2>
+<p>Only to make the app work: to sign you in, sync your content between your devices, deliver the plans and prayer lists you share with friends and groups, send prayer reminders, and let you export or delete your data. We do <strong>not</strong> use it for advertising, profiling, or any purpose unrelated to providing Pilgrim.</p>
 
 <h2>Third-Party Services</h2>
 <ul>
-  <li><strong>Apple CloudKit</strong> — sync and shared zones. Subject to Apple's privacy policy.</li>
+  <li><strong>Railway</strong> — hosts our application server, database, and file storage (your account, synced content, groups, shared items, and attachments). Subject to <a href="https://railway.com/legal/privacy">Railway's privacy policy</a>.</li>
+  <li><strong>Resend</strong> — delivers your one-time email sign-in codes. Receives your email address for that purpose only. Subject to <a href="https://resend.com/legal/privacy-policy">Resend's privacy policy</a>.</li>
+  <li><strong>Apple</strong> — provides Sign in with Apple, and the Apple Push Notification service delivers shared group prayer-time reminders to your device. Subject to Apple's privacy policy.</li>
   <li><strong>api.esv.org</strong> — Bible passage requests are sent through our Cloudflare Worker proxy so your IP address is not exposed to Crossway. The proxy caches responses to minimize traffic. Subject to <a href="https://www.crossway.org/privacy/">Crossway's privacy policy</a>.</li>
   <li><strong>API.Bible</strong> (American Bible Society) — Bible passage requests for CSB / NIV / NLT translations, proxied through our Cloudflare Worker. Subject to <a href="https://scripture.api.bible/">API.Bible's terms</a>.</li>
-  <li><strong>Cloudflare</strong> — runs the Bible-API proxy Worker. Subject to <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare's privacy policy</a>.</li>
+  <li><strong>Cloudflare</strong> — runs the Bible-API proxy Worker (no account data passes through it). Subject to <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare's privacy policy</a>.</li>
 </ul>
 
 <h2>What We Do Not Do</h2>
 <ul>
   <li>No analytics, no telemetry, no crash-reporting SDKs</li>
   <li>No advertising and no advertising identifiers</li>
-  <li>No In-App Purchase, no subscription, no payment processing in v1</li>
+  <li>No In-App Purchase, no subscription, no payment processing</li>
   <li>No tracking across apps or websites</li>
-  <li>No selling or sharing of any kind</li>
+  <li>No selling or sharing of your data with anyone, for any purpose</li>
 </ul>
+
+<h2>Your Choices &amp; Rights</h2>
+<ul>
+  <li><strong>Export your data.</strong> From Pilgrim's profile, "Export my account data" downloads everything tied to your account as a JSON file.</li>
+  <li><strong>Delete your account.</strong> From Pilgrim's profile, "Delete account &amp; synced data" permanently erases your account and all of its server-stored content (synced records, your profile, groups you own, friend connections, shared items, and attachments). This cannot be undone.</li>
+  <li><strong>Sign out</strong> at any time — your local on-device data remains.</li>
+  <li><strong>Delete the app</strong> to remove all local data from your device.</li>
+</ul>
+
+<h2>Data Retention</h2>
+<p>Your synced content is kept while your account exists, so it remains available across your devices. When you delete your account, it is removed from our active systems immediately; routine encrypted backups roll off on our hosting provider's standard schedule. One-time login codes expire within minutes.</p>
 
 <h2>Children</h2>
 <p>Pilgrim is designed for adult Christians and is not directed to children under 13. We do not knowingly collect data from children.</p>
 
-<h2>Your Choices</h2>
-<ul>
-  <li>Delete the app at any time. Local data is removed by iOS. iCloud data can be deleted from Settings &rarr; Apple ID &rarr; iCloud &rarr; Manage Storage.</li>
-  <li>Leave a Circle from inside Pilgrim. All of that Circle's local cache is removed from your device.</li>
-</ul>
+<h2>Changes</h2>
+<p>If we change what we collect or how we use it, we will update this page and its "Last updated" date.</p>
 
 <h2>Contact</h2>
 <p><a href="mailto:brendan@everlight-digital.com">brendan@everlight-digital.com</a></p>
