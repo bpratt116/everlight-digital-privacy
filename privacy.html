@@ -29,12 +29,13 @@
 <h1>Everlight Digital Privacy Policy</h1>
 <p class="meta">Last updated: May 19, 2026 &nbsp;&middot;&nbsp; Effective: May 19, 2026</p>
 
-<p>Everlight Digital ("we", "us", "our") publishes a family of mobile apps for iPhone, iPad, and Apple Watch. This Privacy Policy explains what information we collect, how we use it, and your rights. It applies to all apps we publish, including:</p>
+<p>Everlight Digital LLC ("we", "us", "our") publishes a family of mobile apps and web services. This Privacy Policy explains what information we collect, how we use it, and your rights. It applies to all products we publish, including:</p>
 
 <ul>
   <li><strong>Olive</strong> — family organizer (tasks, meals, calendars, Kid Mode)</li>
   <li><strong>Clarity</strong> — AI-powered task and notes manager</li>
   <li><strong>Halcyon</strong> — weather app with radar</li>
+  <li><strong>Shepherd</strong> — pastoral-care platform for churches (web service at shepherd.everlight-digital.com)</li>
   <li><strong>Tally</strong> — zero-based envelope budgeting for individuals and couples (in development)</li>
   <li><strong>Persue Bible</strong> — Bible reader with reading plans</li>
   <li><strong>Persue Prayer</strong> — prayer journal and devotional app</li>
@@ -62,6 +63,7 @@
     <li><a href="#international">13. International Transfers</a></li>
     <li><a href="#changes">14. Changes to This Policy</a></li>
     <li><a href="#contact">15. Contact</a></li>
+    <li><a href="#shepherd">16. Shepherd (Churches)</a></li>
     <li><a href="#addenda">App-Specific Addenda</a></li>
   </ul>
 </div>
@@ -132,6 +134,14 @@
   <tr><td>RainViewer</td><td>Radar tile data</td><td>Halcyon</td></tr>
   <tr><td>Plaid</td><td>Bank-account linking and transaction import (Transactions product only; no Auth, Identity, Investments, or Liabilities). Optional, Pro-tier only.</td><td>Tally</td></tr>
   <tr><td>Cloudflare (Workers, Workers KV)</td><td>Encrypted Plaid access-token storage and proxied Plaid API calls so credentials never ship in the iOS binary.</td><td>Tally</td></tr>
+  <tr><td>Railway</td><td>Web application hosting and Postgres database (US region)</td><td>Shepherd</td></tr>
+  <tr><td>Cloudflare R2</td><td>Encrypted off-site database backups</td><td>Shepherd</td></tr>
+  <tr><td>Stripe</td><td>Subscription billing and payment processing (card data goes directly to Stripe)</td><td>Shepherd</td></tr>
+  <tr><td>Planning Center</td><td>One-way church-roster sync, when a church connects it (includes minors' data)</td><td>Shepherd</td></tr>
+  <tr><td>Twilio</td><td>Inbound SMS handling, when a church enables text messaging</td><td>Shepherd</td></tr>
+  <tr><td>Resend</td><td>Transactional and reminder email</td><td>Shepherd</td></tr>
+  <tr><td>Cloudflare (Turnstile)</td><td>Bot protection at sign-up/login (receives end-user IP)</td><td>Shepherd</td></tr>
+  <tr><td>Google (Sign-In)</td><td>Optional account sign-in</td><td>Shepherd, Olive, Clarity</td></tr>
 </table>
 
 <p>Anthropic API keys are <strong>never</strong> shipped inside our iOS apps; AI requests are routed through a secured Cloud Functions proxy hosted on Google Firebase.</p>
@@ -167,6 +177,9 @@
 
 <h3>Olive Kid Mode</h3>
 <p>Olive supports family use. When a parent enables Kid Mode, the app is restricted to a child-safe view, Firebase Analytics is fully disabled, and only an explicit allowlist of low-risk events would ever be considered for a future release. Children sign in via the parent account; Olive does not create separate child accounts and does not knowingly collect personal information from children under 13.</p>
+
+<h3>Shepherd (church accounts)</h3>
+<p>Shepherd is a business-to-business service used by churches. A church may store information about minors (for example a child's name, photo, birthday, grade, gender, household, and guardian relationships) as part of its pastoral-care records. <strong>Children do not register or use Shepherd themselves</strong> — all data is entered by the church's adult staff or volunteers, or synced from the church's own church-management system; Shepherd has no child-facing accounts and collects no information directly from children. For this minor data the <strong>church is the data controller</strong> and is responsible for obtaining any parental or guardian consent required by law (e.g. COPPA, or GDPR/UK GDPR children's-data rules); Everlight is a processor acting on the church's instructions. See the <a href="#shepherd">Shepherd section</a> below.</p>
 
 <h3>Other Apps</h3>
 <p>Halcyon, Clarity, Persue Bible, Persue Prayer, Regen, and WordFind are not directed to children under 13 and do not knowingly collect personal information from children under 13. If we learn we have inadvertently collected such information, we will delete it.</p>
@@ -214,9 +227,49 @@
 Email: <a href="mailto:brendan@everlight-digital.com">brendan@everlight-digital.com</a><br>
 Website: <a href="https://everlight-digital.com">everlight-digital.com</a></p>
 
+<h2 id="shepherd">16. Shepherd (Churches)</h2>
+<p>Shepherd is a pastoral-care web platform used by churches (each a "Church" or "tenant"). It differs from our consumer apps, so this section governs it specifically. The canonical site is <a href="https://shepherd.everlight-digital.com">shepherd.everlight-digital.com</a>. Note for our team: this section is self-drafted and not legal advice; have counsel review before relying on it.</p>
+
+<h3>Controller and processor</h3>
+<p>The Church decides what information about its members and community to store in Shepherd. For that congregant information, <strong>the Church is the data controller</strong> and <strong>Everlight is a data processor</strong> acting only on the Church's instructions. The Church is responsible for its lawful basis and for any notices or consents owed to those people (including parental consent for minors). Everlight is the controller only for the limited account/billing data needed to run the service. This Privacy Policy together with our <a href="/terms.html">Terms</a> forms the data-processing agreement between the Church and Everlight; a separately signed DPA is available on request.</p>
+
+<h3>Categories of personal data</h3>
+<ul>
+  <li><strong>Identity &amp; contact:</strong> names, emails, phone numbers, postal addresses, profile photos.</li>
+  <li><strong>Demographic &amp; household:</strong> date of birth/birthday, anniversary, school grade, gender, child/minor flag, family relationships, household membership, guardian links.</li>
+  <li><strong>Pastoral care content (sensitive):</strong> care notes, prayer requests, pastoral-contact records, care status (e.g. hospital, grieving, at-risk), milestones (baptism, surgery, death/memorial), tasks, tags — often including health-related and other sensitive detail.</li>
+  <li><strong>SMS content:</strong> if enabled, the body of inbound text messages and the sender's phone number, stored as notes.</li>
+  <li><strong>Account &amp; security:</strong> staff email and name, a bcrypt-hashed password, session data.</li>
+  <li><strong>Device &amp; technical:</strong> web-push tokens/keys and user-agent (if notifications are enabled), server logs (IP, user agent, timestamps), and the end-user IP checked by our bot-protection provider at sign-up/login.</li>
+  <li><strong>Integration tokens:</strong> encrypted access/refresh tokens for a connected church-management system (e.g. Planning Center).</li>
+  <li><strong>Billing:</strong> billing-contact email and a Stripe customer/subscription ID (no card numbers stored).</li>
+</ul>
+
+<h3>Minors</h3>
+<p>A Church may store data about minors as part of its care records. Children do not register or use Shepherd; adults enter all data or it syncs from the Church's church-management system. The Church is the controller of that data and is responsible for any required parental/guardian consent (COPPA, GDPR/UK GDPR children's-data rules). Parents with questions should contact their church directly; Everlight will assist the church.</p>
+
+<h3>Text messaging (SMS), consent &amp; opt-out</h3>
+<p>If a Church enables SMS, message content and sender numbers are stored as notes and processed by Twilio over the carrier network. Churches must comply with applicable messaging laws (U.S. TCPA, carrier A2P 10DLC): message only consenting recipients, identify the church, and honor opt-out/help. Recipients can reply <strong>STOP</strong> to opt out and <strong>HELP</strong> for help; message and data rates may apply.</p>
+
+<h3>Sub-processors (Shepherd)</h3>
+<ul>
+  <li><strong>Railway</strong> — hosting + Postgres database (US region).</li>
+  <li><strong>Cloudflare R2</strong> — encrypted off-site database backups.</li>
+  <li><strong>Stripe</strong> — billing/payments (card data direct to Stripe).</li>
+  <li><strong>Planning Center</strong> — one-way roster sync incl. minors' data, when connected (never writes back).</li>
+  <li><strong>Twilio</strong> — inbound SMS, when enabled.</li>
+  <li><strong>Resend</strong> — transactional/reminder email (may include a name + short pastoral excerpt).</li>
+  <li><strong>Cloudflare (Turnstile)</strong> — bot protection (receives end-user IP).</li>
+  <li><strong>Google</strong> — optional sign-in.</li>
+</ul>
+
+<h3>Security, retention &amp; rights (Shepherd)</h3>
+<p>Data is encrypted in transit (TLS) and at rest; off-site R2 backups are encrypted; staff passwords are stored only as bcrypt hashes; integration tokens are encrypted before storage. Church data is retained for the life of the account; on tenant purge, live data is deleted, and encrypted backups expire on a rolling basis within 30 days. If a connected church-management system remains linked, deleted records can be re-created on the next sync (that system is the source of the roster). Because the Church is the controller, members exercise access/correction/deletion/portability rights through their Church, which administers the records; Everlight assists the Church. Shepherd is hosted in the U.S.; where required, the Church and Everlight are responsible for an appropriate cross-border transfer mechanism. On a breach affecting Church data, Everlight notifies the Church (controller) without undue delay so it can meet its own notification duties.</p>
+
 <h2 id="addenda">App-Specific Addenda</h2>
 <p>For details specific to a single app, see:</p>
 <ul>
+  <li><a href="https://shepherd.everlight-digital.com/privacy">Shepherd</a> — church-controller model, pastoral data, minors, SMS, sub-processors</li>
   <li><a href="/olive/privacy.html">Olive</a> — household sharing, AI proxy, Kid Mode, analytics opt-out</li>
   <li><a href="/clarity/privacy.html">Clarity</a> — local-first SwiftData, AI features, voice transcription</li>
   <li><a href="/halcyon/privacy.html">Halcyon</a> — location, ads, ATT</li>
