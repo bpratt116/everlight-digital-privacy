@@ -331,7 +331,7 @@ th {
   padding: 96px 24px 104px; }
 .el-hero .lockup { width: 380px; max-width: 84%; height: auto; margin: 0 auto 22px; display: block; }
 .el-hero h1 { color: var(--el-paper); font-size: 40px; margin: 0 0 12px; }
-.el-hero p.tagline { font-size: 20px; font-weight: 600; margin: 0 0 6px; color: #fff; }
+.el-hero p.tagline, .el-hero h1.tagline { font-size: 20px; font-weight: 600; margin: 0 0 6px; color: #fff; }
 .el-hero p.sub { max-width: 620px; margin: 0 auto 28px; font-size: 18px;
   color: rgba(255,255,255,0.92); }
 .el-hero__cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
