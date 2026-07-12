@@ -58,7 +58,7 @@ Sections top→bottom:
 2. **What we build** — three pillars, each a short blurb:
    - Faith & habit apps (Pilgrim, Regen)
    - Church & organization software (Shepherd, EventFlow, Pasture)
-   - Everyday tools (Clarity, and the wider portfolio)
+   - Everyday tools (the wider portfolio — Tally, Halcyon, WordFind as they ship)
 3. **Featured apps** (`#apps`) — responsive card grid, curated live set only. Each card: app icon, name, one-line tagline, platform badge → links to its story page.
 4. **SaaS funnel band** — visually distinct band featuring the three paid web products with direct "start free" CTAs to their live domains. This is the paying-customer conversion path.
 5. **From the journal** — teaser of latest 3 articles → `/journal/`.
@@ -85,9 +85,8 @@ Curated live set (v1):
 | eventflow | EventFlow | Volunteer & event coordination, simplified | Web SaaS | app.everlight-digital.com |
 | pasture | Pasture | Cattle & herd tracking on any device | Web SaaS | pasture.everlight-digital.com |
 | regen | Regen | Recovery & readiness, at a glance | iOS | App Store |
-| clarity | Clarity | A focused AI task manager | Web | clarity live URL |
 
-(Tally, Halcyon, Chrona, and others added as they ship. Deliberately excluded now to avoid dead ends.)
+(Tally, Halcyon, Chrona, and others added as they ship. Deliberately excluded now to avoid dead ends. Clarity is NOT advertised.)
 
 ### 3. Journal (`/journal/`)
 
