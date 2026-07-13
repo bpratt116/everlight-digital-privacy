@@ -33,7 +33,6 @@
 
 <ul>
   <li><strong>Olive</strong> — family organizer (tasks, meals, calendars, Kid Mode)</li>
-  <li><strong>Clarity</strong> — AI-powered task and notes manager</li>
   <li><strong>Halcyon</strong> — weather app with radar</li>
   <li><strong>Shepherd</strong> — pastoral-care platform for churches (web service at shepherd.everlight-digital.com)</li>
   <li><strong>Tally</strong> — zero-based envelope budgeting for individuals and couples (in development)</li>
@@ -73,7 +72,7 @@
 <p>We collect only the information needed to operate the apps. The categories vary by app.</p>
 
 <h3>Account Information</h3>
-<p>When you sign in to apps that require an account (Olive, Clarity, Persue Bible, Persue Prayer), we receive:</p>
+<p>When you sign in to apps that require an account (Olive, Persue Bible, Persue Prayer), we receive:</p>
 <ul>
   <li>Email address</li>
   <li>Name (if provided by Sign in with Apple or Google)</li>
@@ -127,8 +126,8 @@
 <table>
   <tr><th>Provider</th><th>Purpose</th><th>Apps</th></tr>
   <tr><td>Apple (Sign in with Apple, App Store, Push Notifications, CloudKit, HealthKit, WeatherKit)</td><td>Auth, distribution, push, sync, health data, weather data</td><td>All</td></tr>
-  <tr><td>Google Firebase (Authentication, Firestore, Cloud Functions, Crashlytics, Analytics)</td><td>Auth, sync, AI proxy, crash reporting, analytics</td><td>Olive, Clarity, Persue Bible, Persue Prayer (in migration)</td></tr>
-  <tr><td>Anthropic (Claude API, accessed via our Cloud Functions proxy)</td><td>AI responses</td><td>Olive, Clarity</td></tr>
+  <tr><td>Google Firebase (Authentication, Firestore, Cloud Functions, Crashlytics, Analytics)</td><td>Auth, sync, AI proxy, crash reporting, analytics</td><td>Olive, Persue Bible, Persue Prayer (in migration)</td></tr>
+  <tr><td>Anthropic (Claude API, accessed via our Cloud Functions proxy)</td><td>AI responses</td><td>Olive</td></tr>
   <tr><td>RevenueCat</td><td>Subscription management</td><td>Apps with subscriptions</td></tr>
   <tr><td>Google AdMob</td><td>Advertising</td><td>Halcyon (and WordFind if/when ads enabled)</td></tr>
   <tr><td>RainViewer</td><td>Radar tile data</td><td>Halcyon</td></tr>
@@ -141,7 +140,7 @@
   <tr><td>Twilio</td><td>Inbound SMS handling, when a church enables text messaging</td><td>Shepherd</td></tr>
   <tr><td>Resend</td><td>Transactional and reminder email</td><td>Shepherd</td></tr>
   <tr><td>Cloudflare (Turnstile)</td><td>Bot protection at sign-up/login (receives end-user IP)</td><td>Shepherd</td></tr>
-  <tr><td>Google (Sign-In)</td><td>Optional account sign-in</td><td>Shepherd, Olive, Clarity</td></tr>
+  <tr><td>Google (Sign-In)</td><td>Optional account sign-in</td><td>Shepherd, Olive</td></tr>
 </table>
 
 <p>Anthropic API keys are <strong>never</strong> shipped inside our iOS apps; AI requests are routed through a secured Cloud Functions proxy hosted on Google Firebase.</p>
@@ -165,7 +164,7 @@
 <p>Halcyon requests location permission to fetch local weather. Your location is sent to Apple WeatherKit (and RainViewer for radar) to retrieve forecast data. We do not retain location on our servers. You can deny or revoke permission in <em>iOS Settings &gt; Privacy &amp; Security &gt; Location Services</em>.</p>
 
 <h2 id="ai">7. AI Features</h2>
-<p>Olive (Olive Assistant: NL quick-add, Smart Weekly Review, meal AI) and Clarity (Ask Claude, Brain Dump, summarization, task parsing, meeting transcription) include AI features powered by Anthropic's Claude API.</p>
+<p>Olive (Olive Assistant: NL quick-add, Smart Weekly Review, meal AI) includes AI features powered by Anthropic's Claude API.</p>
 <p>When you use an AI feature, the text or audio you submit is sent over HTTPS to our server (Google Cloud Functions), then forwarded to Anthropic. The response is returned to your device. We do not store your prompts or responses after the request completes. Anthropic processes the data per its <a href="https://www.anthropic.com/legal/commercial-terms">commercial terms</a>; Anthropic does not train its models on data sent through the Claude API by default.</p>
 <p>Audio captured for transcription is converted to text on-device or via Apple Speech where possible. Audio is not stored on our servers.</p>
 
@@ -182,12 +181,12 @@
 <p>Shepherd is a business-to-business service used by churches. A church may store information about minors (for example a child's name, photo, birthday, grade, gender, household, and guardian relationships) as part of its pastoral-care records. <strong>Children do not register or use Shepherd themselves</strong> — all data is entered by the church's adult staff or volunteers, or synced from the church's own church-management system; Shepherd has no child-facing accounts and collects no information directly from children. For this minor data the <strong>church is the data controller</strong> and is responsible for obtaining any parental or guardian consent required by law (e.g. COPPA, or GDPR/UK GDPR children's-data rules); Everlight is a processor acting on the church's instructions. See the <a href="#shepherd">Shepherd section</a> below.</p>
 
 <h3>Other Apps</h3>
-<p>Halcyon, Clarity, Persue Bible, Persue Prayer, Regen, and WordFind are not directed to children under 13 and do not knowingly collect personal information from children under 13. If we learn we have inadvertently collected such information, we will delete it.</p>
+<p>Halcyon, Persue Bible, Persue Prayer, Regen, and WordFind are not directed to children under 13 and do not knowingly collect personal information from children under 13. If we learn we have inadvertently collected such information, we will delete it.</p>
 
 <p>Parents who believe a child has provided personal information should contact <a href="mailto:brendan@everlight-digital.com">brendan@everlight-digital.com</a>.</p>
 
 <h2 id="retention">10. Data Retention and Deletion</h2>
-<p>We retain your account data while your account is active. Apps with a Trash feature (Olive, Clarity) keep deleted items for 30 days, then permanently remove them.</p>
+<p>We retain your account data while your account is active. Apps with a Trash feature (Olive) keep deleted items for 30 days, then permanently remove them.</p>
 <p>You can delete your account from within each app (Settings &gt; Account &gt; Delete Account, or the equivalent). Account deletion removes your identity record and your Firestore data within 30 days. Backups are purged within 90 days. Apple CloudKit data is controlled by you and removed when you delete it from your iCloud account or uninstall the app.</p>
 <p>Anonymous diagnostic data (crash logs, analytics events) is retained for up to 14 months.</p>
 
@@ -271,7 +270,6 @@ Website: <a href="https://everlight-digital.com">everlight-digital.com</a></p>
 <ul>
   <li><a href="https://shepherd.everlight-digital.com/privacy">Shepherd</a> — church-controller model, pastoral data, minors, SMS, sub-processors</li>
   <li><a href="/olive/privacy.html">Olive</a> — household sharing, AI proxy, Kid Mode, analytics opt-out</li>
-  <li><a href="/clarity/privacy.html">Clarity</a> — local-first SwiftData, AI features, voice transcription</li>
   <li><a href="/halcyon/privacy.html">Halcyon</a> — location, ads, ATT</li>
   <li><a href="/tally/">Tally</a> — solo or couples budgeting via CloudKit, optional Plaid bank linking, no advertising</li>
   <li><a href="/persue-bible/privacy.html">Persue Bible</a> — Firebase Auth + CloudKit data</li>
