@@ -367,6 +367,9 @@ th {
 .saas-band .eyebrow { color: transparent; }
 .saas-band h2 { color: var(--el-paper); }
 .saas-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.saas-solo { max-width: 620px; }
+.saas-solo .saas-card { padding: 32px; }
+.saas-solo .saas-card p { font-size: 17px; }
 .saas-card { padding: 24px; border-radius: var(--el-radius-lg);
   border: 1px solid rgba(255,255,255,0.14); background: rgba(255,255,255,0.04); }
 .saas-card h3 { color: var(--el-paper); margin: 0 0 6px; }

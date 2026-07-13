@@ -35,11 +35,11 @@
 
   <h2>Lesson two: one person can't build five different codebases from scratch</h2>
 
-  <p>This sounds obvious in hindsight, but it took me longer than it should have to admit: the only way to maintain five or six live apps solo is to stop treating each one as a bespoke project. Auth, subscriptions, error logging, the basic app shell — these look the same across Shepherd, EventFlow, and Pasture, because they should. When I let myself reinvent these per-app "because this one's a little different," I was just paying the same tax five times. The apps that took the longest to get stable were the ones where I'd hand-rolled something I should have reused.</p>
+  <p>This sounds obvious in hindsight, but it took me longer than it should have to admit: the only way to maintain five or six live apps solo is to stop treating each one as a bespoke project. Auth, subscriptions, error logging, the basic app shell — these look the same from one app to the next, whether it's Shepherd on the web or Pilgrim and Regen on iOS, because they should. When I let myself reinvent these per-app "because this one's a little different," I was just paying the same tax five times. The apps that took the longest to get stable were the ones where I'd hand-rolled something I should have reused.</p>
 
   <h2>Lesson three: shipping in public means shipping unfinished things, on purpose</h2>
 
-  <p>A church management SaaS and a cattle-tracking app sound like nothing to do with each other, and mostly they aren't — but the workflow of building them is identical: ship something real to a real user fast, even if it's missing things you know it needs. Shepherd's first version didn't have note-visibility layers. EventFlow's first version didn't have volunteer check-in. Both of those turned out to matter, but I only knew that because actual pastors and actual event coordinators used the thin version first and told me what broke. Waiting to ship until it felt complete would have meant guessing at what "complete" meant, and I'd have guessed wrong.</p>
+  <p>A pastoral-care web app and a Bible app for your phone sound like nothing to do with each other, and mostly they aren't — but the workflow of building them is identical: ship something real to a real user fast, even if it's missing things you know it needs. Shepherd's first version didn't have note-visibility layers. Pilgrim's first version didn't have topical search. Both of those turned out to matter, but I only knew that because actual pastors and actual readers used the thin version first and told me what broke. Waiting to ship until it felt complete would have meant guessing at what "complete" meant, and I'd have guessed wrong.</p>
 
   <h2>Lesson four: the boring infrastructure work is the actual job</h2>
 
@@ -47,7 +47,7 @@
 
   <h2>What I'd tell myself a year ago</h2>
 
-  <p>Ship smaller than feels responsible. Reuse more than feels creative. And expect that the parts of the app you were most excited to build will matter less than the boring parts you almost skipped. None of these apps are finished — Regen still has features I'm not happy with, Pasture is younger than the rest and still finding its shape — but they're alive, real people use them, and a year in, that's the actual measure of whether any of this worked.</p>
+  <p>Ship smaller than feels responsible. Reuse more than feels creative. And expect that the parts of the app you were most excited to build will matter less than the boring parts you almost skipped. None of these apps are finished — Regen still has features I'm not happy with, Olive is younger than the rest and still finding its shape — but they're alive, real people use them, and a year in, that's the actual measure of whether any of this worked.</p>
 
   <div class="made-by" style="text-align:left;margin-top:48px">
     <p style="margin:0 0 12px">Curious what came out of this year of building?</p>
@@ -66,8 +66,6 @@
       <a href="/apps/pilgrim.html">Pilgrim</a>
       <a href="/apps/shepherd.html">Shepherd</a>
       <a href="/apps/olive.html">Olive</a>
-      <a href="/apps/eventflow.html">EventFlow</a>
-      <a href="/apps/pasture.html">Pasture</a>
       <a href="/apps/regen.html">Regen</a>
     </div>
     <div>
