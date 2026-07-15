@@ -27,17 +27,18 @@
 <main>
 
 <h1>Chrona Privacy Policy</h1>
-<p class="meta">Last updated: July 10, 2026</p>
+<p class="meta">Last updated: July 15, 2026</p>
 
 <p>This Privacy Policy describes how Everlight Digital ("we", "us") collects, uses, and shares information when you use the Chrona calendar and task app ("Chrona") on iPhone, iPad, and Mac.</p>
 
-<p><strong>Chrona has no accounts, no login, and no server of ours.</strong> Your calendar, events, tasks, and attachments live on your device and, if you enable it, sync only through your own private Apple iCloud account. We never see your content.</p>
+<p><strong>Chrona has no accounts and no login.</strong> Your calendar, events, tasks, and attachments live on your device and, if you enable it, sync only through your own private Apple iCloud account &mdash; we never see that content. The one exception is Chrona's optional AI text-capture feature: only if you choose to use it, and after you consent to an on-screen prompt, the specific text you type for that feature is sent to our server to be turned into tasks (see "AI text capture" below). You can always use the on-device option instead, in which case nothing leaves your device.</p>
 
 <h2>Information We Collect</h2>
 <ul>
   <li><strong>Your calendar and task content (stored on-device):</strong> Events, tasks, notes, checklists, tags, projects, and file attachments you create are stored locally on your device using Apple's SwiftData.</li>
   <li><strong>iCloud sync (optional, your private account):</strong> If you are signed into iCloud, this content syncs between your own devices through Apple's CloudKit private database. It is stored in your personal iCloud account, not on any Everlight server, and is not visible to us.</li>
   <li><strong>Approximate location (only for weather):</strong> If you grant location permission, Chrona uses your approximate location to fetch a local 10-day forecast from Apple WeatherKit. Location is used only to request weather and is not stored by us or transmitted to any Everlight server.</li>
+  <li><strong>AI text capture (optional, only when you choose it):</strong> Chrona includes an optional "brain dump" feature that turns free-form text you type into structured tasks using AI. This runs only when you explicitly choose the AI option and confirm the on-screen consent prompt. When you do, that text is sent over an encrypted connection to our processing service (a Cloudflare Worker) which passes it to our AI provider, Anthropic, to return the structured tasks. The text is processed transiently to fulfill your request and is not stored by us after processing, is not linked to your identity (Chrona has no accounts), is not used for advertising, and is not used to train AI models. A fully on-device option is always available, and choosing it means no text is transmitted at all.</li>
   <li><strong>Purchases:</strong> Chrona Pro purchases are handled entirely by Apple through the App Store and StoreKit. We do not receive your payment details.</li>
   <li><strong>Device / diagnostic data:</strong> If you choose to share it with Apple, standard crash logs and diagnostics may be provided to us in aggregated, non-identifying form through App Store Connect.</li>
 </ul>
@@ -48,6 +49,7 @@
   <li>To sync your content across your own devices via your private iCloud account</li>
   <li>To show a local weather forecast in your calendar</li>
   <li>To deliver the reminders and notifications you have enabled</li>
+  <li>To turn text into structured tasks, only when you use the optional AI text-capture feature</li>
 </ul>
 
 <h2>How We Share Information</h2>
@@ -55,8 +57,10 @@
   <li><strong>Apple iCloud / CloudKit</strong> &mdash; stores your synced content in your own private iCloud account; controlled by you in iOS/macOS Settings</li>
   <li><strong>Apple WeatherKit</strong> &mdash; receives an approximate location to return a forecast, per Apple's weather data terms</li>
   <li><strong>Apple App Store / StoreKit</strong> &mdash; processes purchases and subscriptions</li>
+  <li><strong>Cloudflare</strong> &mdash; hosts the processing service that relays your AI text-capture request; used only when you choose the AI option</li>
+  <li><strong>Anthropic</strong> &mdash; our AI provider; receives the text you submit to the optional AI text-capture feature in order to return structured tasks, and does not use it to train models</li>
 </ul>
-<p>We do not sell your data, Chrona contains no advertising and no third-party analytics or tracking SDKs, and your calendar and task content never leaves your device except through your own private iCloud account.</p>
+<p>We do not sell your data, and Chrona contains no advertising and no third-party analytics or tracking SDKs. Your calendar and task content never leaves your device except through your own private iCloud account &mdash; the sole exception is the specific text you submit to the optional AI text-capture feature, which is transmitted only with your consent and only for that feature, as described above.</p>
 
 <h2>Children</h2>
 <p>Chrona is not directed to children under 13 and does not knowingly collect their personal information.</p>
