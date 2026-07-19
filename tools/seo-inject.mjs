@@ -47,16 +47,37 @@ function pick(html, re) {
   return m ? m[1] : null;
 }
 
-/** Date the file last changed in git — used as the article publish date. */
-function gitDate(file) {
+const FALLBACK_DATE = '2026-07-12';
+
+/** Date the commit that FIRST added this file landed.
+ *  Must not be the last-commit date: editing an article — or regenerating
+ *  this very block — would otherwise reset its publish date, which both
+ *  misleads readers and churns the --check gate on every commit. */
+function datePublished(file) {
+  try {
+    const out = execSync(
+      `git log --diff-filter=A --format=%cs -- ${JSON.stringify(file)}`,
+      { cwd: ROOT, encoding: 'utf8' }
+    ).trim();
+    // Oldest add is last; a file re-added after a rename yields several.
+    const first = out.split('\n').filter(Boolean).pop();
+    return first || FALLBACK_DATE;
+  } catch {
+    return FALLBACK_DATE;
+  }
+}
+
+/** Date of the file's most recent commit. Converges: regenerating and
+ *  committing on the same day reproduces the same value. */
+function dateModified(file) {
   try {
     const out = execSync(`git log -1 --format=%cs -- ${JSON.stringify(file)}`, {
       cwd: ROOT,
       encoding: 'utf8',
     }).trim();
-    return out || '2026-07-12';
+    return out || FALLBACK_DATE;
   } catch {
-    return '2026-07-12';
+    return FALLBACK_DATE;
   }
 }
 
@@ -138,7 +159,6 @@ function jsonLd(file, kind, title, desc) {
   }
 
   if (kind === 'article') {
-    const published = gitDate(file);
     return [
       {
         '@type': 'Article',
@@ -146,8 +166,8 @@ function jsonLd(file, kind, title, desc) {
         description: desc,
         url,
         image: OG_IMAGE,
-        datePublished: published,
-        dateModified: published,
+        datePublished: datePublished(file),
+        dateModified: dateModified(file),
         author: { '@type': 'Person', name: 'Brendan Pratt' },
         publisher: { '@id': `${ORIGIN}/#org` },
         mainEntityOfPage: { '@type': 'WebPage', '@id': url },

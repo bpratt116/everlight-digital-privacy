@@ -1,15 +1,17 @@
 /* Everlight Digital — analytics loader.
    ONE place to set the measurement ID. Every page loads this file.
 
-   To turn analytics on: replace G-XXXXXXXXXX below with the real GA4
-   Measurement ID, then commit. Until then this script does nothing —
-   no requests, no cookies. */
+   To point the site at a different GA4 property, change MEASUREMENT_ID
+   below and commit — nothing else needs editing. Set back to the
+   G-XXXXXXXXXX placeholder to switch analytics off entirely, which makes
+   this script a no-op: no requests, no cookies. */
 
 (function () {
-  var MEASUREMENT_ID = 'G-XXXXXXXXXX';
+  var MEASUREMENT_ID = 'G-XE9KXLMT24';
 
-  // Placeholder still in place → stay dark rather than firing bad hits.
-  if (MEASUREMENT_ID.indexOf('X') !== -1) return;
+  // Not configured yet → stay dark rather than firing bad hits.
+  // Match the placeholder exactly: real IDs can contain "X" (ours does).
+  if (!MEASUREMENT_ID || MEASUREMENT_ID === 'G-XXXXXXXXXX') return;
 
   var s = document.createElement('script');
   s.async = true;
