@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://everlight-digital.com/sitemap.xml

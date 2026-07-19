@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>OG card</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1200px; height: 630px; }
+  body {
+    font-family: 'Manrope', system-ui, sans-serif;
+    background: #F4EFE6;
+    display: flex;
+    flex-direction: column;
+  }
+  .bar { height: 14px; background: linear-gradient(135deg,#F5B042 0%,#EE5A6F 45%,#7C3AED 100%); }
+  .body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 96px;
+  }
+  .lockup { width: 620px; height: auto; margin-bottom: 40px; }
+  h1 {
+    font-size: 60px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #0E0B14;
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+  p {
+    font-size: 28px;
+    font-weight: 500;
+    color: #2A2530;
+    max-width: 900px;
+    line-height: 1.4;
+  }
+  .foot {
+    height: 8px;
+    background: linear-gradient(135deg,#F5B042 0%,#EE5A6F 45%,#7C3AED 100%);
+    opacity: 0.35;
+  }
+</style>
+</head>
+<body>
+  <div class="bar"></div>
+  <div class="body">
+    <img class="lockup" src="../brand/lockup-light.svg" alt="">
+    <h1>Calm, honest software.</h1>
+    <p>A one-person studio building tools for faith, family, and the everyday.</p>
+  </div>
+  <div class="foot"></div>
+</body>
+</html>

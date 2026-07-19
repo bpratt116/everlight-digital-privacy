@@ -17,5 +17,10 @@ for p in $pages; do
   done
 done
 grep -rniE 'clarity' $pages | tee -a /tmp/el_linkcheck_fail
+
+# SEO plumbing must be regenerated whenever pages are added or renamed.
+node tools/seo-inject.mjs --check   || echo "SEO head stale (run: node tools/seo-inject.mjs)"   | tee -a /tmp/el_linkcheck_fail
+node tools/gen-sitemap.mjs --check  || echo "sitemap stale (run: node tools/gen-sitemap.mjs)"   | tee -a /tmp/el_linkcheck_fail
+
 [ -s /tmp/el_linkcheck_fail ] && { echo "linkcheck: FAIL"; exit 1; }
 echo "linkcheck: OK"
