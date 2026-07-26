@@ -526,3 +526,7 @@ html, body { overflow-x: hidden; }
   .syntax-row dd, .syntax-notes { color: var(--el-mist); }
   .syntax-row[data-kind="task"] dd::after { color: var(--el-cream); }
 }
+
+/* Changelog ----------------------------------------------------------- */
+.release { margin: 0 0 32px; }
+.release h2 { margin-bottom: 8px; }
