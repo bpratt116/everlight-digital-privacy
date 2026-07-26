@@ -308,18 +308,18 @@ git commit -m "feat(css): marketing components + dark mode"
     </div>
     <div>
       <strong style="font-size:13px;letter-spacing:.06em;text-transform:uppercase">Apps</strong>
-      <a href="/apps/pilgrim.html">Pilgrim</a>
-      <a href="/apps/shepherd.html">Shepherd</a>
-      <a href="/apps/eventflow.html">EventFlow</a>
-      <a href="/apps/pasture.html">Pasture</a>
-      <a href="/apps/regen.html">Regen</a>
+      <a href="/apps/pilgrim">Pilgrim</a>
+      <a href="/apps/shepherd">Shepherd</a>
+      <a href="/apps/eventflow">EventFlow</a>
+      <a href="/apps/pasture">Pasture</a>
+      <a href="/apps/regen">Regen</a>
     </div>
     <div>
       <strong style="font-size:13px;letter-spacing:.06em;text-transform:uppercase">More</strong>
       <a href="/journal/">Journal</a>
-      <a href="/privacy.html">Privacy</a>
-      <a href="/terms.html">Terms</a>
-      <a href="/support.html">Support</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+      <a href="/support">Support</a>
     </div>
   </div>
   <p class="legal" style="text-align:center;color:var(--el-stone);padding:0 24px 32px;margin:0">
@@ -448,23 +448,23 @@ Full file (swap each `icon.*` extension to match Task 4's inventory):
     <p class="eyebrow">Featured</p>
     <h2>Apps we make</h2>
     <div class="app-grid">
-      <a class="app-card" href="/apps/pilgrim.html">
+      <a class="app-card" href="/apps/pilgrim">
         <img class="app-card__icon" src="/assets/apps/pilgrim/icon.png" alt="Pilgrim icon">
         <div class="name">Pilgrim</div><div class="tag">Bible &amp; prayer, without the guilt mechanics</div>
         <span class="badge">iOS →</span></a>
-      <a class="app-card" href="/apps/shepherd.html">
+      <a class="app-card" href="/apps/shepherd">
         <img class="app-card__icon" src="/assets/apps/shepherd/icon.png" alt="Shepherd icon">
         <div class="name">Shepherd</div><div class="tag">Pastoral care software churches actually use</div>
         <span class="badge">Web →</span></a>
-      <a class="app-card" href="/apps/eventflow.html">
+      <a class="app-card" href="/apps/eventflow">
         <img class="app-card__icon" src="/assets/apps/eventflow/icon.png" alt="EventFlow icon">
         <div class="name">EventFlow</div><div class="tag">Volunteer &amp; event coordination, simplified</div>
         <span class="badge">Web →</span></a>
-      <a class="app-card" href="/apps/pasture.html">
+      <a class="app-card" href="/apps/pasture">
         <img class="app-card__icon" src="/assets/apps/pasture/icon.png" alt="Pasture icon">
         <div class="name">Pasture</div><div class="tag">Cattle &amp; herd tracking on any device</div>
         <span class="badge">Web →</span></a>
-      <a class="app-card" href="/apps/regen.html">
+      <a class="app-card" href="/apps/regen">
         <img class="app-card__icon" src="/assets/apps/regen/icon.png" alt="Regen icon">
         <div class="name">Regen</div><div class="tag">Recovery &amp; readiness, at a glance</div>
         <span class="badge">iOS →</span></a>
@@ -489,9 +489,9 @@ Full file (swap each `icon.*` extension to match Task 4's inventory):
     <p class="eyebrow">From the journal</p>
     <h2>Writing</h2>
     <ul class="journal-list">
-      <li class="journal-item"><a href="/journal/why-calm-software.html">Why we build calm, honest software</a><p class="dek">The philosophy behind everything Everlight makes.</p></li>
-      <li class="journal-item"><a href="/journal/building-shepherd.html">Building Shepherd: pastoral care software churches actually use</a><p class="dek">What it takes to make software pastors trust.</p></li>
-      <li class="journal-item"><a href="/journal/six-apps-in-a-year.html">What we learned shipping six apps in a year</a><p class="dek">Notes from a one-person studio.</p></li>
+      <li class="journal-item"><a href="/journal/why-calm-software">Why we build calm, honest software</a><p class="dek">The philosophy behind everything Everlight makes.</p></li>
+      <li class="journal-item"><a href="/journal/building-shepherd">Building Shepherd: pastoral care software churches actually use</a><p class="dek">What it takes to make software pastors trust.</p></li>
+      <li class="journal-item"><a href="/journal/six-apps-in-a-year">What we learned shipping six apps in a year</a><p class="dek">Notes from a one-person studio.</p></li>
     </ul>
     <p style="margin-top:20px"><a href="/journal/">Read the journal →</a></p>
   </div>
@@ -685,10 +685,10 @@ git commit -m "feat: 5 per-app story pages"
 
 <section class="section"><div class="wrap" style="max-width:760px">
   <ul class="journal-list">
-    <li class="journal-item"><span class="date">July 2026</span><br><a href="/journal/why-calm-software.html">Why we build calm, honest software</a><p class="dek">The philosophy behind everything Everlight makes.</p></li>
-    <li class="journal-item"><span class="date">July 2026</span><br><a href="/journal/building-shepherd.html">Building Shepherd: pastoral care software churches actually use</a><p class="dek">What it takes to make software pastors trust.</p></li>
-    <li class="journal-item"><span class="date">July 2026</span><br><a href="/journal/six-apps-in-a-year.html">What we learned shipping six apps in a year</a><p class="dek">Notes from a one-person studio.</p></li>
-    <li class="journal-item"><span class="date">July 2026</span><br><a href="/journal/pilgrim-no-guilt.html">Pilgrim: a Bible app without the guilt mechanics</a><p class="dek">Why streaks and shame have no place in a prayer app.</p></li>
+    <li class="journal-item"><span class="date">July 2026</span><br><a href="/journal/why-calm-software">Why we build calm, honest software</a><p class="dek">The philosophy behind everything Everlight makes.</p></li>
+    <li class="journal-item"><span class="date">July 2026</span><br><a href="/journal/building-shepherd">Building Shepherd: pastoral care software churches actually use</a><p class="dek">What it takes to make software pastors trust.</p></li>
+    <li class="journal-item"><span class="date">July 2026</span><br><a href="/journal/six-apps-in-a-year">What we learned shipping six apps in a year</a><p class="dek">Notes from a one-person studio.</p></li>
+    <li class="journal-item"><span class="date">July 2026</span><br><a href="/journal/pilgrim-no-guilt">Pilgrim: a Bible app without the guilt mechanics</a><p class="dek">Why streaks and shame have no place in a prayer app.</p></li>
   </ul>
 </div></section>
 

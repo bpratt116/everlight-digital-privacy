@@ -122,11 +122,19 @@ const APPS = {
     category: 'BusinessApplication',
     url: 'https://www.pastorshepherd.com',
   },
+  'apps/chrona.html': {
+    name: 'Chrona',
+    os: 'iOS, macOS',
+    category: 'ProductivityApplication',
+    // Not on the App Store yet — points at its own page until 1.0 is approved,
+    // at which point swap in the apps.apple.com URL (and the buttons on the page).
+    url: 'https://everlight-digital.com/apps/chrona.html',
+  },
   'apps/olive.html': {
     name: 'Olive',
     os: 'iOS',
     category: 'LifestyleApplication',
-    url: `${ORIGIN}/apps/olive.html`,
+    url: 'https://apps.apple.com/us/app/olive-household-rhythms/id6762567367',
   },
 };
 
@@ -139,7 +147,7 @@ function jsonLd(file, kind, title, desc) {
     url: `${ORIGIN}/`,
     logo: `${ORIGIN}/brand/lockup-light.svg`,
     email: 'brendan@everlight-digital.com',
-    description: 'A one-person studio building calm, honest software for faith, family, and the everyday.',
+    description: 'A husband and wife team building digital tools for what matters most.',
   };
 
   if (kind === 'home') {
@@ -200,7 +208,7 @@ function buildBlock(file, html) {
   const title = rawTitle.replace(/\s+—\s+Everlight Digital\s*$/, '').trim();
   const desc =
     pick(html, /<meta name="description" content="([^"]*)"/) ??
-    'Calm, honest software for faith, family, and the everyday.';
+    'Digital tools for what matters most.';
 
   const ogType = kind === 'article' ? 'article' : 'website';
   const lines = [START, `<link rel="canonical" href="${url}">`];
@@ -221,7 +229,7 @@ function buildBlock(file, html) {
     `<meta property="og:image" content="${OG_IMAGE}">`,
     `<meta property="og:image:width" content="1200">`,
     `<meta property="og:image:height" content="630">`,
-    `<meta property="og:image:alt" content="Everlight Digital — calm, honest software.">`,
+    `<meta property="og:image:alt" content="Everlight Digital — Digital tools for what matters most.">`,
     `<meta name="twitter:card" content="summary_large_image">`,
     `<meta name="twitter:title" content="${esc(title)}">`,
     `<meta name="twitter:description" content="${esc(desc)}">`,
