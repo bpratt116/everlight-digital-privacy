@@ -31,6 +31,19 @@
 </head>
 <body>
 
+<!--
+  Copy on this page describes Olive v2 (solo repositioning). Every factual claim
+  was checked against the app source on `main`:
+    sharing / expiry / snapshot semantics  → functions/shareLink.js
+    share sheet + expiry options           → Views/ShareLinkView.swift
+    NO in-app revoke button exists         → ShareLinkService.revokeLink() has zero
+                                             call sites; do not promise one
+    account deletion + 30-day purge        → functions/deleteAccount.js, orphanPurge.js
+    portion scaling                        → Models/Recipe.swift, MealPlan.swift, FamilyMember.swift
+    restore purchases                      → Views/PaywallView.swift (Restore button)
+  Invites were REMOVED in v2 — never reintroduce "invite your partner" language.
+-->
+
 <header class="topbar">
   <div class="topbar-inner">
     <a class="brand" href="/"><img src="/brand/lockup-gradient.svg" alt="Everlight Digital"></a>
@@ -45,40 +58,59 @@
 
 <p><a href="/support">&larr; All Support</a></p>
 <h1>Olive Support</h1>
-<p class="meta">Family organizer for tasks, meals, and routines</p>
+<p class="meta">Meal planner and household manager for the person running the house</p>
 
 <div class="card accent">
   Email: <a href="mailto:brendan@everlight-digital.com">brendan@everlight-digital.com</a> &middot; <a href="/olive/privacy">Privacy</a>
 </div>
 
-<h2>About Olive</h2>
-<p>Olive is a household app for managing tasks, meal plans, grocery lists, calendars, cleaning routines, and kid rewards across the family. Available on iPhone, iPad, and Apple Watch.</p>
+<h2>What Olive Is</h2>
+<p>Olive is a meal planner and household manager for the one person who already runs the house. You keep a short profile of your household — who you're cooking for, their portion sizes, allergies, and which nights they're out — and Olive uses it to plan the week's dinners, write the grocery list from those dinners, and show you the day ahead on one screen. It's built for one person to use on their own; nobody else has to sign up.</p>
+
+<h2>Contact Us</h2>
+<p>Email <a href="mailto:brendan@everlight-digital.com">brendan@everlight-digital.com</a>. Olive is made by one person, so replies come from a human — usually within a couple of business days. If you're writing about a bug, it helps to say what iPhone or iPad you're on, what you tapped, and what happened instead.</p>
 
 <h2>Common Questions</h2>
 
-<h3>How do I invite my spouse or family member?</h3>
-<p>Open <em>Me &rarr; Household &rarr; Invite</em>. Send the invite link via Messages or email. The recipient taps the link in Olive on their device and joins your household.</p>
+<h3>Can I share my plan or grocery list with someone else?</h3>
+<p>Yes — with a read-only link. Open the grocery list or the household screen and tap <em>Share</em>. You choose what goes in the link: your grocery list, this week's dinners, your week's calendar, or any combination. Olive gives you a web link you can text or email to anyone.</p>
+<p>Whoever you send it to just opens it in a browser. They don't need the app, an account, or a login, and they cannot change anything — it's a view, not an invitation. Olive doesn't have a way to add a second person as an editor of your household; the link is the sharing feature.</p>
 
-<h3>The invite link didn't work for my spouse.</h3>
-<p>Make sure the recipient has Olive installed before tapping the link. If the link still fails, both members should sign out, reinstall the app, then resend the invite. Email us if it still fails.</p>
+<h3>Does a shared link keep updating after I send it?</h3>
+<p>No. Each link is a snapshot of your data at the moment you created it. If you add three things to the grocery list afterwards, the person holding the old link won't see them — that's deliberate, so an old link can't quietly keep leaking new information. When something changes and it matters, create a fresh link and send that one.</p>
+<p>Two details worth knowing: items you've already checked off are left out of a shared grocery list (a shopper only needs what's still missing), and a link never includes your notes, Kid Mode content, or anyone's email address.</p>
 
-<h3>How do I set up Kid Mode?</h3>
-<p><em>Me &rarr; Family &rarr; Kid Mode &rarr; Set Up</em>. You'll set a parent PIN and pick which child profile to lock the device into. Kid Mode disables analytics and restricts the app to a child-safe view. Exit Kid Mode by entering the PIN.</p>
+<h3>How do I stop a shared link from working?</h3>
+<p>Every link expires on its own, and you pick when. The default is the coming Sunday night; before you send it, tap <em>Change</em> on the share screen to pick 2 weeks or 30 days instead. 30 days is the longest a link can ever live — Olive won't issue a permanent one. Once a link expires, anyone opening it sees "this link has stopped working" and nothing else.</p>
+<p>If you need a link killed before its expiry date — you sent it to the wrong number, say — email <a href="mailto:brendan@everlight-digital.com">brendan@everlight-digital.com</a> with the link and we'll shut it off. This version of the app doesn't yet have a button to do that yourself; it's on the list. Note that creating a new link does not switch off an older one — each link expires on its own schedule.</p>
 
-<h3>Why isn't my grocery list updating on my spouse's phone?</h3>
-<p>Sync runs in the background. Pull-to-refresh on the Grocery list. If still missing, check both devices are signed into the same household (<em>Me &rarr; Household</em>).</p>
+<h3>How does "cooking for" / portion scaling work?</h3>
+<p>On the household screen, under <em>Who you're cooking for</em>, you list the people you actually cook for. Each one gets a portion size — half, full, or extra — and you can mark the weeknights they're standing-absent (a kid at practice every Thursday, for example).</p>
+<p>Olive adds those up into a plate count for each night: three full portions plus one half is 3.5 plates, and on Thursday that person's portion drops out automatically. When a planned dinner came from one of your recipes, Olive rescales that recipe's ingredient amounts from the servings it was written for to the plates you actually need, and shows you it did ("scaled for 3.5"). The grocery quantities follow from the same math.</p>
+<p>Your recipe is never rewritten — the original servings and amounts stay exactly as you entered them, and scaling is worked out fresh each time. Ingredient lines with no number in them, like "salt to taste," are left alone.</p>
 
-<h3>Olive Assistant didn't understand my request.</h3>
-<p>Olive Assistant is in early release. Try simpler phrasing ("add milk to grocery", "remind me Tuesday at 5pm"). Email us with the exact phrase that failed so we can improve.</p>
+<h3>What's in Olive Plus, and what's free?</h3>
+<p>Olive itself is free: planning your dinners, the grocery list, the calendar, the household profile, portion scaling, and Kid Mode chores and rewards all work without paying. Olive Plus adds the AI helpers — Ask Olive (type or dictate a brain dump and Olive files each piece where it belongs), Smart Weekly Review, Smart Grocery Auto-Build, and AI dinner suggestions while you're planning the week. Plus also unlocks the parent Approval Queue, where you approve or turn down your kids' chore and reward requests in one place. Plus is $4.99/month or $39.99/year.</p>
+<p>Before you decide, each AI feature gives free accounts a couple of tries so you can see what it does.</p>
 
-<h3>How do I cancel Olive Plus?</h3>
-<p><em>iOS Settings &rarr; [your name] &rarr; Subscriptions &rarr; Olive &rarr; Cancel.</em></p>
+<h3>I already paid — how do I restore my purchase?</h3>
+<p>Open Olive, go to the upgrade screen, and tap <em>Restore</em> at the top. That asks the App Store for the purchases tied to your Apple Account and turns Plus back on.</p>
+<p>Make sure you're signed in to the same Apple Account you bought Plus with — purchases belong to an Apple Account, not to an email address you typed into Olive. If Restore doesn't do it, email us and include the Apple Account email the purchase was made on.</p>
 
-<h3>How do I delete my Olive account?</h3>
-<p><em>Me &rarr; Account &rarr; Delete Account.</em> This removes your data from our backend within 30 days. See <a href="/olive/privacy">privacy policy</a>.</p>
+<h3>How do I cancel my Olive Plus subscription?</h3>
+<p>Subscriptions are billed by Apple, so cancelling happens in your iPhone or iPad settings — there's no cancel button inside Olive, and there's nothing we can switch off from our end. On your device, open <em>Settings</em> and tap your name at the top, tap <em>Subscriptions</em>, then tap <em>Olive</em> and <em>Cancel Subscription</em>.</p>
+<p>You keep Plus until the end of the period you've already paid for, and it won't renew after that. Refunds are also handled by Apple, at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
+
+<h3>How do I delete my account, and what happens to my data?</h3>
+<p>In the app, go to the <em>Me</em> tab and tap <em>Delete Account</em>. You'll be asked to type your email address and confirm once more, because this cannot be undone.</p>
+<p>When you confirm, Olive removes your sign-in, your saved devices, and your per-account records (including anything stored for the AI features). If you were the only person in your household — which, in Olive, you almost certainly were — that household's contents are marked for deletion and permanently erased by a scheduled cleanup job within 30 days. There's no way for us to bring any of it back afterwards, so export or write down anything you want to keep first.</p>
+<p>One important thing: deleting your Olive account does not cancel an Olive Plus subscription. Apple bills that separately, so cancel it in Settings &rarr; Subscriptions (see above) or you'll keep being charged.</p>
+
+<h3>Is my household data private?</h3>
+<p>Your household details stay yours. We don't sell or share your information, and we don't train AI models on it. When you use an AI feature, the text you sent is processed to answer that request and isn't kept for training. The full details are in the <a href="/olive/privacy">privacy policy</a>.</p>
 
 <h2>Need More Help?</h2>
-<p>Email <a href="mailto:brendan@everlight-digital.com">brendan@everlight-digital.com</a>. Include your iOS version, Olive version, and a screenshot if possible.</p>
+<p>Email <a href="mailto:brendan@everlight-digital.com">brendan@everlight-digital.com</a>. Include your iOS version, Olive version, and a screenshot if possible. Ideas are as welcome as bug reports — a fair number of the things in Olive now started as an email from someone using it.</p>
 </main>
 
 <footer class="site-footer">
