@@ -8,6 +8,5 @@ live in `CLAUDE.md` where present.
 When asked to capture reel or demo footage, follow
 [`docs/reels-capture.md`](docs/reels-capture.md).
 
-**Privacy rule:** fake or demo data only. Never record, type, or show real
-people's prayers, names, or contacts. If real data could appear in any frame,
+**Privacy rule:** record the public site in a clean browser profile with Do Not Disturb on; no real names, emails, contacts or prayers in any frame. If real data could appear in any frame,
 stop and say so instead of recording.

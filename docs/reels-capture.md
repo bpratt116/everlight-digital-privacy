@@ -1,11 +1,9 @@
 You are helping me capture screen recordings for short vertical social videos (reels) about my software: Shepherd (pastorshepherd.com, the web app) and Everlight Digital apps. Work on my computer.
 
 HARD PRIVACY RULE
-- Never record real church members, real pastoral notes, real prayer requests, emails, or names from LifePoint Church.
-- Before you record, sign in to a separate DEMO church workspace, or create one, filled only with fake data. Use obviously fictional names (e.g. "Grace Demo Church", people like "Sam Rivera", "Jordan Lee", "Taylor Brooks"). Use 15–25 people, 3 families, 6 prayer requests, 5 care follow-ups, 2 milestones this week.
-- If any real data could appear (notifications, autofill, browser history, bookmarks, other tabs), stop and tell me instead of recording.
-- Hide the bookmarks bar, close other tabs, turn on Do Not Disturb, use a clean browser profile, and set zoom so the text is large.
-- For this app: the site is public, but nothing personal may appear in any frame (other tabs, notifications, autofill). No real people's prayers.
+- The site is public, but record it in a clean browser profile with no other tabs, bookmarks bar, autofill or signed-in accounts visible.
+- Turn on Do Not Disturb so no notifications appear, and show no real names, emails, contacts or prayers in any frame.
+- If anything personal could appear, stop and tell me instead of recording.
 
 FORMAT
 - Preferred: record the browser in mobile view (DevTools device mode, 430x932, or the installed PWA on an iPhone) so the result is natively 9:16.
