@@ -1,0 +1,85 @@
+/* Everlight homepage — quiet, editorial layout. Loaded only by /index.html. */
+.home {
+  --serif: 'Newsreader', 'Iowan Old Style', Georgia, 'Times New Roman', serif;
+  --hl: #FFF1A8;
+  color-scheme: light;
+  background: #fff; color: var(--el-ink);
+}
+.home .site-header { background: rgba(255,255,255,.9); border-bottom: 1px solid rgba(14,11,20,.06); }
+.home .site-header a.brand { color: var(--el-ink); }
+.home .site-header nav a { color: var(--el-graphite); }
+.home .site-footer { background: #fff; color: var(--el-ink); }
+.sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+.skip { position:absolute; left:12px; top:-60px; z-index:50; background:var(--el-ink); color:#fff; padding:10px 16px; border-radius:8px; }
+.skip:focus { top:12px; }
+.home a:focus-visible, .home button:focus-visible { outline: 3px solid var(--el-violet); outline-offset: 3px; border-radius: 6px; }
+
+.home main { padding: 0 24px; }
+.intro, .app-sec, .outro { max-width: 640px; margin: 0 auto; text-align: center; }
+.intro { padding: 120px 0 72px; }
+.intro__mark { display:block; margin: 0 auto 36px; }
+.home h1, .home h2 {
+  font-family: var(--serif); font-weight: 400; letter-spacing: -.015em;
+  line-height: 1.08; color: var(--el-ink); margin: 0 0 28px;
+}
+.home h1 { font-size: clamp(44px, 7vw, 76px); }
+.home h2 { font-size: clamp(36px, 5.4vw, 58px); border: 0; padding: 0; }
+.lede { font-family: var(--serif); font-size: clamp(18px, 2vw, 21px); line-height: 1.6; color: #3a3540; margin: 0 auto; max-width: 34em; }
+.home mark { background: var(--hl); color: inherit; padding: .05em .2em; border-radius: 3px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+.kicker { font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #5f5965; margin: 0 0 18px; }
+
+.app-index { display:flex; flex-wrap:wrap; justify-content:center; gap: 8px 22px; margin-top: 44px; }
+.app-index a { color: var(--el-graphite); font-weight: 600; font-size: 15px; border-bottom: 1px solid var(--el-mist); padding-bottom: 2px; }
+.app-index a:hover { text-decoration:none; border-color: var(--el-ink); }
+
+.app-sec { padding: 96px 0 104px; border-top: 1px solid rgba(14,11,20,.06); scroll-margin-top: 60px; }
+.phone {
+  position: relative; margin: 0 auto 64px; width: min(300px, 74vw); aspect-ratio: 9 / 19.5;
+  border-radius: 46px; padding: 10px; background: linear-gradient(145deg,#f3f2f0,#d9d7d3);
+  box-shadow: 0 1px 0 rgba(255,255,255,.8) inset, 0 2px 4px rgba(14,11,20,.06),
+              0 30px 60px -20px rgba(14,11,20,.28), 0 60px 120px -40px rgba(14,11,20,.22);
+  transform: rotate(-1.5deg);
+}
+.phone__screen { position:relative; width:100%; height:100%; border-radius: 37px; overflow:hidden; background:#111; }
+.phone__screen > img { position:absolute; inset:0; width:100%; height:100%; object-fit: cover; }
+.phone__screen > img[hidden] { display:block; opacity:0; }
+.phone__screen > img { transition: opacity .6s ease; }
+.play {
+  position:absolute; left:50%; top:50%; transform: translate(-50%,-50%);
+  width: 84px; height: 84px; border-radius: 50%; border: 0; cursor: pointer;
+  background: rgba(70,68,72,.55); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  display:grid; place-items:center; transition: background .2s, transform .2s;
+}
+.play:hover { background: rgba(40,38,42,.7); transform: translate(-50%,-50%) scale(1.04); }
+.play svg { width: 38px; height: 38px; fill: #fff; }
+.play .i-pause, .play[aria-pressed="true"] .i-play { display:none; }
+.play[aria-pressed="true"] .i-pause { display:inline; }
+.play[aria-pressed="true"] { opacity: .35; }
+.play[aria-pressed="true"]:hover, .play[aria-pressed="true"]:focus-visible { opacity: 1; }
+
+.type-screen { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap: 14px; padding: 28px; text-align:center; }
+.type-screen--prayer { background: #1b1714; color: #f4efe6; }
+.type-screen--olive { background: #f6f4ec; color: var(--el-ink); }
+.type-screen img { width: 96px; height: 96px; border-radius: 22px; box-shadow: 0 10px 30px rgba(0,0,0,.12); }
+.ts-eyebrow { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; opacity: .7; }
+.ts-title { font-family: var(--serif); font-size: 34px; line-height: 1.1; }
+.ts-title em { background: var(--hl); color: #1b1714; font-style: italic; padding: 0 .15em; }
+.ts-sub { font-size: 14px; opacity: .7; }
+
+.actions { margin: 36px 0 0; display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap: 14px 26px; }
+.store { display:inline-block; background: var(--el-ink); color:#fff; font-weight:700; font-size:15px; padding: 13px 24px; border-radius: 999px; }
+.store:hover { text-decoration:none; background: var(--el-graphite); }
+.more { color: var(--el-graphite); font-weight:600; }
+.lede a { color: var(--el-ink); text-decoration: underline; text-underline-offset: 3px; }
+.outro { padding: 104px 0 120px; border-top: 1px solid rgba(14,11,20,.06); }
+
+@media (max-width: 540px) {
+  .intro { padding: 72px 0 48px; }
+  .app-sec { padding: 64px 0 72px; }
+  .phone { margin-bottom: 44px; border-radius: 40px; }
+  .phone__screen { border-radius: 31px; }
+  .play { width: 68px; height: 68px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .phone__screen > img, .play { transition: none; }
+}

@@ -31,112 +31,78 @@
 <script src="/brand/analytics.js" defer></script>
 <!-- seo:end -->
 <link rel="stylesheet" href="/brand/site.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap">
+<link rel="stylesheet" href="/brand/home.css">
+<script src="/brand/home.js" defer></script>
 </head>
-<body>
-
+<body class="home">
+<a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="/"><img src="/brand/beacon-gradient.svg" alt="Everlight Digital Logo">Everlight Digital</a>
     <nav>
       <a href="#apps">Apps</a>
-      <a href="#saas">Software</a>
+      <a href="#shepherd">Churches</a>
       <a href="/journal/">Journal</a>
     </nav>
   </div>
 </header>
-
-<section class="el-hero">
-  <img class="lockup" src="/brand/lockup-gradient.svg" alt="Everlight Digital">
-  <h1 class="tagline">Digital tools for what matters most.</h1>
-  <p class="sub">A husband and wife team building apps for faith, family, and church.</p>
-  <div class="el-hero__cta">
-    <a class="btn btn--onlight" href="#apps">See what we build</a>
-    <a class="btn btn--ghost" href="mailto:brendan@everlight-digital.com">Work with us</a>
-  </div>
+<main id="main">
+<section class="intro" aria-labelledby="intro-h">
+  <img class="intro__mark" src="/brand/beacon-gradient.svg" alt="" width="56" height="56">
+  <h1 id="intro-h">Digital tools for<br>what matters most.</h1>
+  <p class="lede">Everlight Digital is <mark>a husband and wife team</mark> building apps for faith, family, and church. No dark patterns, no manipulation, no selling your data — intentional tools that do their job and get out of your way.</p>
+  <nav class="app-index" id="apps" aria-label="Our apps">
+    <a href="#pilgrim">Pilgrim</a><a href="#prayerlist">Prayer List</a><a href="#chrona">Chrona</a><a href="#olive">Olive</a><a href="#regen">Regen</a><a href="#shepherd">Shepherd</a>
+  </nav>
 </section>
-
-<section class="section">
-  <div class="wrap">
-    <p class="eyebrow">What we build</p>
-    <div class="pillars">
-      <div class="pillar"><h3>Faith &amp; habit apps</h3><p>Christian daily prayer apps and Bible reading trackers that help you build healthier rhythms — without the guilt mechanics. Pilgrim, Regen.</p></div>
-      <div class="pillar"><h3>Church software</h3><p>Pastoral care management software and church member tracking tools that help pastors truly care for their congregation. Shepherd.</p></div>
-      <div class="pillar"><h3>Family &amp; everyday</h3><p>Intentional home organization apps and digital tools for managing daily family life. Olive, with more added as they ship.</p></div>
-    </div>
-  </div>
+<section class="app-sec" id="pilgrim" aria-labelledby="pilgrim-h">
+  <figure class="phone"><div class="phone__screen"><img src="/assets/apps/pilgrim/shot-1.png" alt="Pilgrim home — your spiritual life in one place" style="object-position:center top"><img src="/assets/apps/pilgrim/shot-2.png" alt="Pilgrim daily home screen" hidden style="object-position:center top"><img src="/assets/apps/pilgrim/shot-3.png" alt="Pilgrim Bible reader" hidden style="object-position:center top"><img src="/assets/apps/pilgrim/shot-4.png" alt="Pilgrim prayer lists" hidden style="object-position:center top"></div><button class="play" type="button" aria-pressed="false" aria-label="Play a tour of Pilgrim screenshots"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="i-play" d="M8 5v14l11-7z"/><path class="i-pause" d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg></button></figure>
+  <p class="kicker">Pilgrim · Bible &amp; Prayer · iOS</p>
+  <h2 id="pilgrim-h">Scripture,<br>without the scoreboard.</h2>
+  <p class="lede">Most Bible apps turn reading into a streak to protect. Pilgrim is <mark>a quiet place to read, mark it up, and pray</mark> — full Bible text with clean typography, highlights, notes, and a real prayer list, with nothing tracking how “consistent” you’ve been.</p>
+  <p class="actions"><a class="store" href="https://apps.apple.com/us/app/pilgrim-bible-prayer/id6769929244">Download Pilgrim on the App Store</a><a class="more" href="/apps/pilgrim">Learn more<span class="sr-only"> about Pilgrim</span> →</a></p>
 </section>
-
-<section class="section section--tint" id="apps">
-  <div class="wrap">
-    <p class="eyebrow">Featured</p>
-    <h2>Apps we make</h2>
-    <div class="app-grid">
-      <a class="app-card" href="/apps/pilgrim">
-        <img class="app-card__icon" src="/assets/apps/pilgrim/icon.png" alt="Pilgrim Christian Daily Prayer App Icon">
-        <div class="name">Pilgrim</div><div class="tag">Bible &amp; prayer, without the guilt mechanics</div>
-        <span class="badge">iOS →</span></a>
-      <a class="app-card" href="/apps/shepherd">
-        <img class="app-card__icon" src="/assets/apps/shepherd/icon.png" alt="Shepherd Pastoral Care Software Icon">
-        <div class="name">Shepherd</div><div class="tag">Pastoral care software churches actually use</div>
-        <span class="badge">Web →</span></a>
-      <a class="app-card" href="/apps/regen">
-        <img class="app-card__icon" src="/assets/apps/regen/icon.png" alt="Regen Recovery & Readiness App Icon">
-        <div class="name">Regen</div><div class="tag">Recovery &amp; readiness, at a glance</div>
-        <span class="badge">iOS →</span></a>
-      <a class="app-card" href="/apps/olive">
-        <img class="app-card__icon" src="/assets/apps/olive/icon.png" alt="Olive Family Organization App Icon">
-        <div class="name">Olive</div><div class="tag">A calm home for your family's week</div>
-        <span class="badge">iOS →</span></a>
-      <!-- Chrona is not on the App Store yet; the badge says so on purpose.
-           Change it to "iOS →" once 1.0 is approved. -->
-      <a class="app-card" href="/apps/chrona">
-        <img class="app-card__icon" src="/assets/apps/chrona/icon.png" alt="Chrona Natural Language Calendar App Icon">
-        <div class="name">Chrona</div><div class="tag">Type it. It's scheduled.</div>
-        <span class="badge">Coming soon →</span></a>
-      <a class="app-card" href="/uncap/">
-        <img class="app-card__icon" src="/assets/apps/uncap/icon.png" alt="Uncap On-Device Dictation App Icon">
-        <div class="name">Uncap</div><div class="tag">Private, on-device dictation for your Mac</div>
-        <span class="badge">Mac →</span></a>
-    </div>
-  </div>
+<section class="app-sec" id="prayerlist" aria-labelledby="prayerlist-h">
+  <figure class="phone"><div class="phone__screen"><div class="type-screen type-screen--prayer" role="img" aria-label="Prayer List"><span class="ts-eyebrow">Prayer List</span><span class="ts-title">Pray.<br>Then mark it<br><em>answered.</em></span></div></div></figure>
+  <p class="kicker">Pilgrim: Prayer List · iPhone &amp; iPad</p>
+  <h2 id="prayerlist-h">Pray for people,<br>then mark it answered.</h2>
+  <p class="lede">Keep a list of people and situations to pray for, and <mark>mark them answered</mark>. Free includes 10 active prayers — answered ones don’t count. Plus unlocks a bigger list, named lists, people, widgets, and sharing with one person.</p>
+  <p class="actions"><a class="store" href="https://apps.apple.com/us/app/id6813986018">Download Prayer List on the App Store</a></p>
 </section>
-
-<section class="section saas-band" id="saas">
-  <div class="wrap">
-    <p class="eyebrow">For churches</p>
-    <h2>Software you can start today</h2>
-    <div class="saas-solo">
-      <div class="saas-card">
-        <h3>Shepherd</h3>
-        <p>Pastoral care software churches actually use — know your people, and never lose track of who needs care. Free to start, with paid plans as your church grows.</p>
-        <a class="btn btn--onlight" href="https://www.pastorshepherd.com">Start free</a>
-      </div>
-    </div>
-  </div>
+<section class="app-sec" id="chrona" aria-labelledby="chrona-h">
+  <figure class="phone"><div class="phone__screen"><img src="/assets/apps/chrona/shot-1.png" alt="Chrona month view with events and tasks" style="object-position:center top" loading="lazy"><img src="/assets/apps/chrona/shot-2.png" alt="Chrona task list with projects and tags" hidden style="object-position:center top" loading="lazy"><img src="/assets/apps/chrona/shot-3.png" alt="Chrona day timeline with time-blocked tasks" hidden style="object-position:center top" loading="lazy"></div><button class="play" type="button" aria-pressed="false" aria-label="Play a tour of Chrona screenshots"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="i-play" d="M8 5v14l11-7z"/><path class="i-pause" d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg></button></figure>
+  <p class="kicker">Chrona · iPhone · iPad · Mac</p>
+  <h2 id="chrona-h">Type it.<br>It’s scheduled.</h2>
+  <p class="lede">Adding one event shouldn’t take a dozen taps. In Chrona, <mark>one sentence becomes one event</mark> — dates, times, repeats, alerts, and locations parsed as you type, with tasks living on the same calendar as your day.</p>
+  <p class="actions"><a class="store" href="https://apps.apple.com/us/app/chrona-calendar-tasks/id6788943940">Download Chrona on the App Store</a><a class="more" href="/apps/chrona">Learn more<span class="sr-only"> about Chrona</span> →</a></p>
 </section>
-
-<section class="section">
-  <div class="wrap">
-    <p class="eyebrow">From the journal</p>
-    <h2>Writing</h2>
-    <ul class="journal-list">
-      <li class="journal-item"><a href="/journal/how-to-organize-pastoral-care-in-a-growing-church">How to Organize Pastoral Care in a Growing Church</a><p class="dek">Learn how to scale care without losing the personal touch.</p></li>
-      <li class="journal-item"><a href="/journal/christian-daily-prayer-app-finding-rhythm">Christian Daily Prayer App: Finding a Rhythm That Works</a><p class="dek">How to build a consistent habit without relying on guilt mechanics.</p></li>
-      <li class="journal-item"><a href="/journal/building-shepherd">Building Shepherd: pastoral care software churches actually use</a><p class="dek">What it takes to make software pastors trust.</p></li>
-      <li class="journal-item"><a href="/journal/pilgrim-no-guilt">Pilgrim: a Bible app without the guilt mechanics</a><p class="dek">Why streaks and shame have no place in a prayer app.</p></li>
-    </ul>
-    <p style="margin-top:20px"><a href="/journal/">Read the journal →</a></p>
-  </div>
+<section class="app-sec" id="olive" aria-labelledby="olive-h">
+  <figure class="phone"><div class="phone__screen"><div class="type-screen type-screen--olive" role="img" aria-label="Olive app icon"><img src="/assets/apps/olive/icon.png" alt="" loading="lazy"><span class="ts-title">Olive</span><span class="ts-sub">A calm home for your family’s week</span></div></div></figure>
+  <p class="kicker">Olive · iOS</p>
+  <h2 id="olive-h">A calm home<br>for your family’s week.</h2>
+  <p class="lede">Tasks, routines, the family calendar, meals, and groceries in <mark>one shared place the whole household can see</mark> — without badges and streaks guilt-tripping anyone.</p>
+  <p class="actions"><a class="store" href="https://apps.apple.com/us/app/olive-household-rhythms/id6762567367">Download Olive on the App Store</a><a class="more" href="/apps/olive">Learn more<span class="sr-only"> about Olive</span> →</a></p>
 </section>
-
-<section class="section section--tint">
-  <div class="wrap" style="max-width:680px;text-align:center">
-    <p class="eyebrow">Our philosophy</p>
-    <h2>Software that respects you</h2>
-    <p style="font-size:19px;color:var(--el-stone)">No dark patterns. No manipulation. No selling your data. We build intentional tools that do their job and get out of your way — and we charge a fair price instead of mining your attention.</p>
-  </div>
+<section class="app-sec" id="regen" aria-labelledby="regen-h">
+  <figure class="phone"><div class="phone__screen"><img src="/assets/apps/regen/shot-1.png" alt="Regen daily readiness — know when to push hard" style="object-position:center top" loading="lazy"><img src="/assets/apps/regen/shot-2.png" alt="Regen recovery detail" hidden style="object-position:center top" loading="lazy"><img src="/assets/apps/regen/shot-3.png" alt="Regen trends over time" hidden style="object-position:center top" loading="lazy"><img src="/assets/apps/regen/shot-4.png" alt="Regen recommendations" hidden style="object-position:center top" loading="lazy"></div><button class="play" type="button" aria-pressed="false" aria-label="Play a tour of Regen screenshots"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="i-play" d="M8 5v14l11-7z"/><path class="i-pause" d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg></button></figure>
+  <p class="kicker">Regen · iOS</p>
+  <h2 id="regen-h">Ready to push,<br>or time to rest?</h2>
+  <p class="lede">Regen pulls in your HealthKit data — sleep, heart rate variability, and strain — and turns it into <mark>one clear recovery read</mark>, plus trends across weeks so you can catch overtraining early.</p>
+  <p class="actions"><a class="store" href="https://apps.apple.com/us/app/regen-athlete/id6764216927">Download Regen on the App Store</a><a class="more" href="/apps/regen">Learn more<span class="sr-only"> about Regen</span> →</a></p>
 </section>
-
+<section class="app-sec" id="shepherd" aria-labelledby="shepherd-h">
+  <figure class="phone"><div class="phone__screen"><img src="/assets/apps/shepherd/shot-1.png" alt="Shepherd Today view with sample milestones and tasks" style="object-position:12% top" loading="lazy"><img src="/assets/apps/shepherd/shot-2.png" alt="Shepherd people directory with sample data" hidden style="object-position:12% top" loading="lazy"><img src="/assets/apps/shepherd/shot-3.png" alt="Shepherd prayer requests with sample data" hidden style="object-position:12% top" loading="lazy"><img src="/assets/apps/shepherd/shot-4.png" alt="Shepherd notes with sample data" hidden style="object-position:12% top" loading="lazy"></div><button class="play" type="button" aria-pressed="false" aria-label="Play a tour of Shepherd screenshots"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="i-play" d="M8 5v14l11-7z"/><path class="i-pause" d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg></button></figure>
+  <p class="kicker">Shepherd · Web app for churches</p>
+  <h2 id="shepherd-h">Know your people.<br>Care for them well.</h2>
+  <p class="lede">Pastoral care software churches actually use: people, prayer requests, and notes in one place, so <mark>nobody who needs care gets lost</mark>. Free to start, with paid plans as your church grows.</p>
+  <p class="actions"><a class="store" href="https://www.pastorshepherd.com">Start free at pastorshepherd.com</a><a class="more" href="/apps/shepherd">Learn more<span class="sr-only"> about Shepherd</span> →</a></p>
+</section>
+<section class="outro" aria-labelledby="outro-h">
+  <h2 id="outro-h">Software that respects you.</h2>
+  <p class="lede">We charge a fair price instead of <mark>mining your attention</mark>. Read more in the <a href="/journal/">journal</a>, or <a href="mailto:brendan@everlight-digital.com">work with us</a>.</p>
+</section>
+</main>
 <footer class="site-footer">
   <div class="foot-grid">
     <div>
@@ -149,6 +115,7 @@
       <a href="/apps/shepherd">Shepherd</a>
       <a href="/apps/olive">Olive</a>
       <a href="/apps/regen">Regen</a>
+      <a href="/apps/chrona">Chrona</a>
     </div>
     <div>
       <strong style="font-size:13px;letter-spacing:.06em;text-transform:uppercase">More</strong>
@@ -161,6 +128,5 @@
   <p class="legal" style="text-align:center;color:var(--el-stone);padding:0 24px 32px;margin:0">
     &copy; 2026 Everlight Digital. All rights reserved.</p>
 </footer>
-
 </body>
 </html>
