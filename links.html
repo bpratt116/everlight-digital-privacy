@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Links — Everlight Digital</title>
+<meta name="description" content="Brendan Pratt — pastor and app maker. Prayer List, Chrona, Olive, Regen, Pilgrim, and Shepherd.">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="theme-color" content="#0E0B14">
+<link rel="stylesheet" href="/brand/site.css">
+<style>
+  body.lib{margin:0;background:var(--el-ink);color:var(--el-cream);font-family:var(--el-font);min-height:100vh}
+  .lib-wrap{max-width:480px;margin:0 auto;padding:40px 20px 56px}
+  .lib-head{text-align:center;margin-bottom:28px}
+  .lib-head img{width:64px;height:64px}
+  .lib-head h1{font-size:1.5rem;margin:12px 0 6px;background:var(--el-gradient-text);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lib-head p{margin:0;color:var(--el-mist)}
+  .lib-list{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+  .lib-link{display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:var(--el-radius-md);background:var(--el-graphite);color:var(--el-cream);text-decoration:none;border:1px solid rgba(255,255,255,.06)}
+  .lib-link img{width:44px;height:44px;border-radius:10px;flex:none}
+  .lib-link strong,.lib-signup h2,.lib-signup p{color:inherit}.lib-link strong{display:block}.lib-link span{font-size:.875rem;color:var(--el-mist)}
+  .lib-link--featured{background:var(--el-gradient);color:#fff;border:0}.lib-link--featured span{color:#fff;opacity:.9}
+  .lib-signup{color:var(--el-cream);margin-top:32px;padding:20px;border-radius:var(--el-radius-lg);background:var(--el-graphite)}
+  .lib-signup h2{margin:0 0 8px;font-size:1.1rem}
+  .lib-signup form{display:flex;gap:8px;flex-wrap:wrap}
+  .lib-signup input{flex:1 1 200px;padding:12px;border-radius:var(--el-radius-sm);border:1px solid var(--el-stone);background:var(--el-ink);color:var(--el-cream)}
+  .lib-signup button{padding:12px 18px;border:0;border-radius:var(--el-radius-sm);background:var(--el-gradient);color:#fff;font-weight:700}
+  .lib-foot{text-align:center;margin-top:28px;font-size:.8rem;color:var(--el-stone)}.lib-foot a{color:var(--el-mist)}
+</style>
+</head>
+<body class="lib">
+<main class="lib-wrap">
+  <header class="lib-head">
+    <img src="/brand/app-icon.svg" alt="Everlight Digital">
+    <h1>Brendan Pratt</h1>
+    <p>Pastor &amp; app maker. Building calm tools for faith, family, and focus.</p>
+  </header>
+  <ul class="lib-list">
+    <li><a class="lib-link lib-link--featured" data-track href="https://apps.apple.com/us/app/pilgrim-prayer-list/id6813986018"><img src="/brand/app-icon.svg" alt=""><div><strong>Prayer List</strong><span>Keep the people you pray for close</span></div></a></li>
+    <!-- TODO: Chrona App Store ID is a placeholder in repo (idXXXXXXXXXX). Linking product page until real URL exists. -->
+    <li><a class="lib-link" data-track href="/apps/chrona.html"><img src="/assets/apps/chrona/icon.png" alt=""><div><strong>Chrona</strong><span>Make the most of your time</span></div></a></li>
+    <li><a class="lib-link" data-track href="https://apps.apple.com/us/app/olive-household-rhythms/id6762567367"><img src="/assets/apps/olive/icon.png" alt=""><div><strong>Olive</strong><span>A calm home for your family's week</span></div></a></li>
+    <li><a class="lib-link" data-track href="https://apps.apple.com/us/app/regen-athlete/id6764216927"><img src="/assets/apps/regen/icon.png" alt=""><div><strong>Regen</strong><span>Recovery insights for athletes</span></div></a></li>
+    <li><a class="lib-link" data-track href="https://apps.apple.com/us/app/pilgrim-bible-prayer/id6769929244"><img src="/assets/apps/pilgrim/icon.png" alt=""><div><strong>Pilgrim</strong><span>Bible &amp; prayer, without the guilt</span></div></a></li>
+    <li><a class="lib-link" data-track href="https://www.pastorshepherd.com"><img src="/assets/apps/shepherd/icon.png" alt=""><div><strong>Shepherd</strong><span>Pastoral care software for churches</span></div></a></li>
+  </ul>
+  <section class="lib-signup" id="signup">
+    <h2>Get updates</h2>
+    <p>New apps and occasional notes. No spam.</p>
+    <!-- TODO(Resend): no backend yet. Wire this form to a Resend audience endpoint. -->
+    <form onsubmit="event.preventDefault();this.querySelector('button').textContent='Coming soon';">
+      <input type="email" placeholder="you@example.com" aria-label="Email" required>
+      <button type="submit">Notify me</button>
+    </form>
+  </section>
+  <p class="lib-foot"><a href="/">everlight-digital.com</a> · <a href="/privacy">Privacy</a></p>
+</main>
+<script>
+(function(){
+  var src=(new URLSearchParams(location.search).get('src')||'').toLowerCase();
+  if(src!=='x'&&src!=='threads')src='direct';
+  var CAMPAIGN='linkinbio';
+  var APPLE_PT=null; // TODO: Apple provider token (pt=) not in repo; set when known.
+  document.querySelectorAll('a[data-track]').forEach(function(a){
+    var u=new URL(a.getAttribute('href'),location.href);
+    if(u.hostname==='apps.apple.com'){
+      u.searchParams.set('ct',CAMPAIGN+'-'+src);
+      if(APPLE_PT)u.searchParams.set('pt',APPLE_PT);
+    }else{
+      u.searchParams.set('utm_source',src);
+      u.searchParams.set('utm_medium','social');
+      u.searchParams.set('utm_campaign',CAMPAIGN);
+    }
+    a.href=u.toString();
+  });
+})();
+</script>
+</body>
+</html>
