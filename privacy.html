@@ -44,7 +44,7 @@
 <main>
 
 <h1>Everlight Digital Privacy Policy</h1>
-<p class="meta">Last updated: May 19, 2026 &nbsp;&middot;&nbsp; Effective: May 19, 2026</p>
+<p class="meta">Last updated: November 4, 2026 &nbsp;&middot;&nbsp; Effective: November 4, 2026</p>
 
 <p>Everlight Digital LLC ("we", "us", "our") publishes a family of mobile apps and web services. This Privacy Policy explains what information we collect, how we use it, and your rights. It applies to all products we publish, including:</p>
 
@@ -102,7 +102,7 @@
 <p>Tasks, notes, lists, calendar events, meals, recipes, grocery items, journal entries, prayer entries, sermon notes, reading-plan progress, marked verses, kid points, rewards, celebrations, habits, voice recordings, meeting transcripts, check-in entries, and similar items you save inside an app.</p>
 
 <h3>Health and Fitness Data (Regen only)</h3>
-<p>If you grant HealthKit permission, Regen reads heart-rate variability (HRV), resting heart rate (RHR), sleep, active energy, workouts, and body mass from Apple Health. This data stays on your device and is never transmitted to our servers. See <a href="#health">Section 5</a>.</p>
+<p>If you grant HealthKit permission, Regen reads heart-rate variability (HRV), resting heart rate (RHR), sleep, active energy, and workouts from Apple Health. Regen does not read body mass. What stays on your device, and what cloud coaching sends, is described in <a href="#health">Section 5</a>.</p>
 
 <h3>Location Data (Halcyon only)</h3>
 <p>If you grant location permission, Halcyon uses your location to fetch local weather. We do not store your location on our servers. See <a href="#location">Section 6</a>.</p>
@@ -111,7 +111,7 @@
 <p>Device model, iOS/iPadOS/watchOS version, app version, time zone, locale, and crash logs (via Firebase Crashlytics or Apple's standard crash reporting).</p>
 
 <h3>Usage Analytics</h3>
-<p>Anonymous event data (which screens are viewed, which features are tapped) via Firebase Analytics. Currently active in Olive only. Disabled by default until you accept the in-app prompt. Disabled at all times in Kid Mode. Other apps may add anonymous analytics in future versions, with notice.</p>
+<p>Firebase Analytics collects event data (which screens are viewed, which features are tapped). In Olive, analytics are disabled by default until you accept the in-app prompt, and they are disabled at all times in Kid Mode. In Regen, Firebase Analytics logs product events with no health values and no user ID. Other apps may add analytics in future versions, with notice.</p>
 
 <h3>Subscription and Purchase Data</h3>
 <p>Apple receives your purchase information when you subscribe via in-app purchase. RevenueCat receives a pseudonymous identifier and your subscription status to manage entitlements across devices.</p>
@@ -145,6 +145,8 @@
   <tr><td>Apple (Sign in with Apple, App Store, Push Notifications, CloudKit, HealthKit, WeatherKit)</td><td>Auth, distribution, push, sync, health data, weather data</td><td>All</td></tr>
   <tr><td>Google Firebase (Authentication, Firestore, Cloud Functions, Crashlytics, Analytics)</td><td>Auth, sync, AI proxy, crash reporting, analytics</td><td>Olive, Persue Bible, Persue Prayer (in migration)</td></tr>
   <tr><td>Anthropic (Claude API, accessed via our Cloud Functions proxy)</td><td>AI responses</td><td>Olive</td></tr>
+  <tr><td>Google Firebase (Cloud Functions, Firestore)</td><td>Regen cloud coaching. The numeric summary in <a href="#health">Section 5</a> is sent to a Cloud Function over TLS and is tied to the user's account. Firestore stores Coach Notes under that account. Chat messages are not stored. Apple Health readings are not synced to the account.</td><td>Regen</td></tr>
+  <tr><td>Anthropic (Claude API, via the Regen Cloud Function)</td><td>Generates Regen coaching from the numeric summary in <a href="#health">Section 5</a>. The summary is sent over TLS and is tied to the user's account.</td><td>Regen</td></tr>
   <tr><td>RevenueCat</td><td>Subscription management</td><td>Apps with subscriptions</td></tr>
   <tr><td>Google AdMob</td><td>Advertising</td><td>Halcyon (and WordFind if/when ads enabled)</td></tr>
   <tr><td>RainViewer</td><td>Radar tile data</td><td>Halcyon</td></tr>
@@ -163,7 +165,8 @@
 <p>Anthropic API keys are <strong>never</strong> shipped inside our iOS apps; AI requests are routed through a secured Cloud Functions proxy hosted on Google Firebase.</p>
 
 <h2 id="health">5. Health and Sensitive Data</h2>
-<p>Regen reads health data from Apple HealthKit when you grant permission. Health data is processed entirely on-device. We do not transmit, store, or share your HealthKit data.</p>
+<p>Apple Health readings, GPS routes, and logged lifting weights stay on your device and are not synced to your account. If you are signed in and use cloud coaching (chat, weekly review, insights, or Coach Notes), a numeric summary of your recent health data (HRV, resting heart rate, sleep hours, workout duration, heart rate, distance, and effort, and your recovery score) is sent to our server and to our AI provider, Anthropic, to generate your coaching. On Pro, Elite, and Founder plans, the weekly review sends this summary automatically on Mondays when you open the app. Coach Notes are saved to your account; chat messages are not.</p>
+<p>That summary travels over TLS and is tied to your account.</p>
 <p>You can revoke HealthKit access at any time in <em>iOS Settings &gt; Privacy &amp; Security &gt; Health &gt; Regen</em>.</p>
 <p>Persue Prayer's mortification (sin tracking) entries and accountability check-ins are sensitive personal-reflection content. They are excluded from Spotlight indexing and stored in your private iCloud (CloudKit) container.</p>
 
@@ -291,7 +294,7 @@ Website: <a href="https://everlight-digital.com">everlight-digital.com</a></p>
   <li><a href="/tally/">Tally</a> — solo or couples budgeting via CloudKit, optional Plaid bank linking, no advertising</li>
   <li><a href="/persue-bible/privacy">Persue Bible</a> — Firebase Auth + CloudKit data</li>
   <li><a href="/persue-prayer/privacy">Persue Prayer</a> — sensitive content handling, biometric lock</li>
-  <li><a href="/regen/privacy">Regen</a> — HealthKit on-device only</li>
+  <li><a href="/regen/privacy">Regen</a> — Apple Health readings stay on the device; cloud coaching sends a numeric summary</li>
   <li><a href="/wordfind/privacy">WordFind</a> — local-only game data</li>
 </ul>
 
