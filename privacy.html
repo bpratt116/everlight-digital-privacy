@@ -158,6 +158,11 @@
   <tr><td>Resend</td><td>Transactional and reminder email</td><td>Shepherd</td></tr>
   <tr><td>Cloudflare (Turnstile)</td><td>Bot protection at sign-up/login (receives end-user IP)</td><td>Shepherd</td></tr>
   <tr><td>Google (Sign-In)</td><td>Optional account sign-in</td><td>Shepherd, Olive</td></tr>
+  <tr><td>Railway</td><td>Hosting, Postgres database, and file storage</td><td>EventFlow</td></tr>
+  <tr><td>Resend</td><td>Transactional email</td><td>EventFlow</td></tr>
+  <tr><td>Google Fonts</td><td>Font delivery. The browser sends IP address and user agent.</td><td>EventFlow</td></tr>
+  <tr><td>Planning Center</td><td>Reads attendance totals, only if an organization admin connects it</td><td>EventFlow</td></tr>
+  <tr><td>LifeOS</td><td>Optional integration for one configured account. Sends upcoming event names and open task titles.</td><td>EventFlow</td></tr>
 </table>
 
 <p>Anthropic API keys are <strong>never</strong> shipped inside our iOS apps; AI requests are routed through a secured Cloud Functions proxy hosted on Google Firebase.</p>
