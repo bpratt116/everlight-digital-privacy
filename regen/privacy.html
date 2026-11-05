@@ -44,19 +44,19 @@
 <main>
 
 <h1>Regen Privacy Policy</h1>
-<p class="meta">Last updated: May 6, 2026</p>
+<p class="meta">Last updated: November 4, 2026</p>
 
 <p>This Privacy Policy describes how Everlight Digital ("we", "us") collects, uses, and shares information when you use the Regen recovery dashboard ("Regen") on iPhone and Apple Watch.</p>
 
 <h2>Information We Collect</h2>
 <ul>
   <li><strong>Account data:</strong> Regen uses Sign in with Apple or email + password via Firebase Authentication. We store the resulting account identifier and, if applicable, your email address.</li>
-  <li><strong>Health data (read on-device):</strong> If you grant HealthKit permission, Regen reads heart-rate variability (HRV), resting heart rate (RHR), sleep, active energy, workout history, body mass, and related metrics from Apple Health. The raw HealthKit samples are read on-device and are not transmitted by Regen.</li>
-  <li><strong>Derived health summaries (synced to your private Firebase account):</strong> Daily summary metrics (HRV, RHR, sleep duration, training load), workout sessions, morning check-ins, session-feel ratings, and training goals are written to your private Firestore document so they sync across iPhone and Apple Watch and survive a reinstall.</li>
-  <li><strong>AI Coach Notes (optional):</strong> If you use Coach Notes, a sanitized workout summary is sent through our Cloud Functions proxy to Anthropic's Claude API to generate the note. Raw HealthKit samples are not sent.</li>
+  <li><strong>Health data:</strong> If you grant HealthKit permission, Regen reads heart-rate variability (HRV), resting heart rate (RHR), sleep, active energy, and workouts from Apple Health. Regen does not read body mass.</li>
   <li><strong>Settings:</strong> Unit preferences, dashboard configuration, and notification preferences stored locally.</li>
   <li><strong>Device / diagnostic data:</strong> Device model, iOS version, watchOS version, app version, and crash logs.</li>
 </ul>
+
+<p>Health data is sent only after you turn cloud coaching on. If you are signed in and have turned it on, a numeric summary of your recent health data (HRV, resting heart rate, sleep hours, workout duration, heart rate, distance, effort, and recovery score) is sent to Everlight Digital's server and to our AI provider, Anthropic, to generate your coaching, when you use cloud coaching (chat, weekly review, insights, or Coach Notes). On Pro, Elite, and Founder plans, the weekly review sends this summary automatically on Mondays when you open the app, and only while cloud coaching is on. You can turn it off at any time in Settings, which stops further sends. Apple Health readings, GPS routes, and logged lifting weights stay on your device and are not synced to your account. Coach Notes are saved to your account; chat messages are not. That summary travels over TLS and is tied to your account.</p>
 
 <h2>How We Use Information</h2>
 <ul>
@@ -68,12 +68,13 @@
 
 <h2>How We Share Information</h2>
 <ul>
-  <li><strong>Apple HealthKit</strong> &mdash; read access only, on-device, controlled by you in iOS Settings &gt; Health</li>
+  <li><strong>Apple HealthKit</strong> &mdash; read on your device, controlled by you in iOS Settings &gt; Health</li>
   <li><strong>Apple</strong> (Sign in with Apple, App Store, push notifications)</li>
-  <li><strong>Google Firebase</strong> (Authentication, Firestore, Cloud Functions) &mdash; processes derived health summaries, check-ins, training goals, workouts, and account data on our behalf</li>
-  <li><strong>Anthropic</strong> &mdash; if you use Coach Notes, a sanitized workout summary is sent through our Cloud Functions proxy to Anthropic's Claude API</li>
+  <li><strong>Google Firebase</strong> (Authentication, Cloud Functions, Firestore) &mdash; account sign-in. Only after you turn cloud coaching on, Cloud Functions receive the numeric summary over TLS, tied to your account. Firestore stores Coach Notes under your account. Chat messages are not stored. Apple Health readings are not synced to your account.</li>
+  <li><strong>Google Firebase Analytics</strong> &mdash; product events, with no health values and no user ID</li>
+  <li><strong>Anthropic</strong> &mdash; receives that numeric summary, via the Cloud Function, to generate your coaching, only after you turn cloud coaching on</li>
 </ul>
-<p>We do not sell your data and Regen contains no advertising trackers. Raw HealthKit samples never leave your device.</p>
+<p>We do not sell your data and Regen contains no advertising trackers.</p>
 
 <h2>Children</h2>
 <p>Regen is not directed to children under 13 and does not knowingly collect their personal information.</p>
@@ -82,7 +83,7 @@
 <p>You can revoke HealthKit access at any time in iOS Settings &gt; Privacy &gt; Health &gt; Regen. Uninstalling the app removes all locally stored data. EU/UK users have GDPR rights; California users have CCPA rights. Contact <a href="mailto:brendan@everlight-digital.com">brendan@everlight-digital.com</a>.</p>
 
 <h2>Security</h2>
-<p>HealthKit data is encrypted by iOS. App data is sandboxed per Apple platform standards.</p>
+<p>HealthKit data on your device is encrypted by iOS. App data is sandboxed per Apple platform standards. The coaching summary is sent over TLS and is tied to your account.</p>
 
 <h2>Changes to This Policy</h2>
 <p>We may update this policy. Material changes will be announced in-app.</p>
