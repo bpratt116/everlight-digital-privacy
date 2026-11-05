@@ -44,19 +44,20 @@
 <main>
 
 <h1>Everlight Digital Privacy Policy</h1>
-<p class="meta">Last updated: May 19, 2026 &nbsp;&middot;&nbsp; Effective: May 19, 2026</p>
+<p class="meta">Last updated: November 4, 2026 &nbsp;&middot;&nbsp; Effective: November 4, 2026</p>
 
 <p>Everlight Digital LLC ("we", "us", "our") publishes a family of mobile apps and web services. This Privacy Policy explains what information we collect, how we use it, and your rights. It applies to all products we publish, including:</p>
 
 <ul>
-  <li><strong>Olive</strong> — family organizer (tasks, meals, calendars, Kid Mode)</li>
-  <li><strong>Halcyon</strong> — weather app with radar</li>
+  <li><strong>Chrona: Calendar &amp; Tasks</strong> — calendar and tasks (iPhone, iPad, and Mac)</li>
+  <li><strong>Halcyon Weather</strong> — weather app with radar (iPhone, iPad, and Apple Watch)</li>
+  <li><strong>Olive</strong> — family organizer (tasks, meals, calendars, Kid Mode). App Store title: Olive - Household Rhythms.</li>
+  <li><strong>Pilgrim: Bible</strong> — Bible reader with reading plans, notes, and prayer (iOS)</li>
+  <li><strong>Pilgrim: Prayer List</strong> — prayer list, separate from Pilgrim: Bible (iPhone and iPad)</li>
+  <li><strong>Regen</strong> — recovery and training-load dashboard. App Store title: Regen Athlete.</li>
+  <li><strong>Scorekeep</strong> — game, player, and score tracker (iPhone and iPad). App Store title: Scorekeep Games.</li>
   <li><strong>Shepherd</strong> — pastoral-care platform for churches (web service at shepherd.everlight-digital.com)</li>
-  <li><strong>Tally</strong> — zero-based envelope budgeting for individuals and couples (in development)</li>
-  <li><strong>Persue Bible</strong> — Bible reader with reading plans</li>
-  <li><strong>Persue Prayer</strong> — prayer journal and devotional app</li>
-  <li><strong>Regen</strong> — recovery and training-load dashboard</li>
-  <li><strong>WordFind</strong> — daily word-search puzzle</li>
+  <li><strong>Uncap</strong> — on-device dictation for Mac</li>
 </ul>
 
 <p>App-specific addenda are linked at the bottom of this page where an app's data practices differ materially from the defaults described here.</p>
@@ -89,14 +90,11 @@
 <p>We collect only the information needed to operate the apps. The categories vary by app.</p>
 
 <h3>Account Information</h3>
-<p>When you sign in to apps that require an account (Olive, Persue Bible, Persue Prayer), we receive:</p>
+<p>When you sign in to an app that requires an account, we receive the account details for that app:</p>
 <ul>
-  <li>Email address</li>
-  <li>Name (if provided by Sign in with Apple or Google)</li>
-  <li>An authentication identifier issued by Apple, Google, or our auth provider</li>
-  <li>A hashed password (only when you sign up with email/password)</li>
+  <li><strong>Olive:</strong> your name and email address if you sign in with Apple or Google, or your email address and a hashed password if you sign up with email and password.</li>
 </ul>
-<p>Halcyon, Regen, and WordFind do not require an account.</p>
+<p>Halcyon and Regen do not require an account.</p>
 
 <h3>Content You Create</h3>
 <p>Tasks, notes, lists, calendar events, meals, recipes, grocery items, journal entries, prayer entries, sermon notes, reading-plan progress, marked verses, kid points, rewards, celebrations, habits, voice recordings, meeting transcripts, check-in entries, and similar items you save inside an app.</p>
@@ -117,7 +115,7 @@
 <p>Apple receives your purchase information when you subscribe via in-app purchase. RevenueCat receives a pseudonymous identifier and your subscription status to manage entitlements across devices.</p>
 
 <h3>App Tracking Transparency (ATT)</h3>
-<p>Apps that show ads (currently Halcyon, and WordFind if/when ads are enabled) prompt for App Tracking Transparency permission. If you grant it, the IDFA may be used by Google AdMob for personalized ads. If you decline, you still see ads, but they are non-personalized.</p>
+<p>Halcyon, which shows ads, prompts for App Tracking Transparency permission. If you grant it, the IDFA may be used by Google AdMob for personalized ads. If you decline, you still see ads, but they are non-personalized.</p>
 
 <h2 id="use">2. How We Use Information</h2>
 <ul>
@@ -143,13 +141,11 @@
 <table>
   <tr><th>Provider</th><th>Purpose</th><th>Apps</th></tr>
   <tr><td>Apple (Sign in with Apple, App Store, Push Notifications, CloudKit, HealthKit, WeatherKit)</td><td>Auth, distribution, push, sync, health data, weather data</td><td>All</td></tr>
-  <tr><td>Google Firebase (Authentication, Firestore, Cloud Functions, Crashlytics, Analytics)</td><td>Auth, sync, AI proxy, crash reporting, analytics</td><td>Olive, Persue Bible, Persue Prayer (in migration)</td></tr>
+  <tr><td>Google Firebase (Authentication, Firestore, Cloud Functions, Crashlytics, Analytics)</td><td>Auth, sync, AI proxy, crash reporting, analytics</td><td>Olive</td></tr>
   <tr><td>Anthropic (Claude API, accessed via our Cloud Functions proxy)</td><td>AI responses</td><td>Olive</td></tr>
   <tr><td>RevenueCat</td><td>Subscription management</td><td>Apps with subscriptions</td></tr>
-  <tr><td>Google AdMob</td><td>Advertising</td><td>Halcyon (and WordFind if/when ads enabled)</td></tr>
+  <tr><td>Google AdMob</td><td>Advertising</td><td>Halcyon</td></tr>
   <tr><td>RainViewer</td><td>Radar tile data</td><td>Halcyon</td></tr>
-  <tr><td>Plaid</td><td>Bank-account linking and transaction import (Transactions product only; no Auth, Identity, Investments, or Liabilities). Optional, Pro-tier only.</td><td>Tally</td></tr>
-  <tr><td>Cloudflare (Workers, Workers KV)</td><td>Encrypted Plaid access-token storage and proxied Plaid API calls so credentials never ship in the iOS binary.</td><td>Tally</td></tr>
   <tr><td>Railway</td><td>Web application hosting and Postgres database (US region)</td><td>Shepherd</td></tr>
   <tr><td>Cloudflare R2</td><td>Encrypted off-site database backups</td><td>Shepherd</td></tr>
   <tr><td>Stripe</td><td>Subscription billing and payment processing (card data goes directly to Stripe)</td><td>Shepherd</td></tr>
@@ -165,17 +161,6 @@
 <h2 id="health">5. Health and Sensitive Data</h2>
 <p>Regen reads health data from Apple HealthKit when you grant permission. Health data is processed entirely on-device. We do not transmit, store, or share your HealthKit data.</p>
 <p>You can revoke HealthKit access at any time in <em>iOS Settings &gt; Privacy &amp; Security &gt; Health &gt; Regen</em>.</p>
-<p>Persue Prayer's mortification (sin tracking) entries and accountability check-ins are sensitive personal-reflection content. They are excluded from Spotlight indexing and stored in your private iCloud (CloudKit) container.</p>
-
-<h3>Tally Financial Data (Plaid)</h3>
-<p>Tally users on the Pro tier may optionally connect a bank, credit card, or other financial account through <a href="https://plaid.com/legal/">Plaid</a> to import transactions into their budget. When you connect an account:</p>
-<ul>
-  <li>Plaid Link runs inside Tally. You authenticate directly with your financial institution through Plaid; Tally never sees your bank credentials.</li>
-  <li>Plaid returns a token which our Cloudflare Worker (<code>tally-finance-worker</code>) exchanges for an access token. The access token is encrypted at rest in Cloudflare Workers KV, keyed per user. No copy of the token is stored on your device or in our other systems.</li>
-  <li>Tally requests only the Plaid <strong>Transactions</strong> product. We do not request Auth, Identity, Investments, Liabilities, Income, or Assets. Tally cannot initiate ACH transfers or move money.</li>
-  <li>For each transaction we receive amount, merchant name, posted date, account name, and Plaid's category suggestion. These are stored inside the user's iCloud (CloudKit) shared household zone so both spouses can categorize them.</li>
-  <li>Disconnecting a bank inside Tally deletes the Plaid item and the stored access token immediately. Previously-imported transactions remain inside the user's CloudKit budget data until the user deletes them or removes the household.</li>
-</ul>
 
 <h2 id="location">6. Location Data</h2>
 <p>Halcyon requests location permission to fetch local weather. Your location is sent to Apple WeatherKit (and RainViewer for radar) to retrieve forecast data. We do not retain location on our servers. You can deny or revoke permission in <em>iOS Settings &gt; Privacy &amp; Security &gt; Location Services</em>.</p>
@@ -186,7 +171,7 @@
 <p>Audio captured for transcription is converted to text on-device or via Apple Speech where possible. Audio is not stored on our servers.</p>
 
 <h2 id="ads">8. Advertising</h2>
-<p>Halcyon's free tier shows ads via Google AdMob. You can remove ads by upgrading to the paid tier. WordFind ships with ad code stubbed; if ads become active in a future version, an in-app notice and updated policy section will explain.</p>
+<p>Halcyon's free tier shows ads via Google AdMob. You can remove ads by upgrading to the paid tier.</p>
 <p>If you grant App Tracking Transparency, AdMob may use your advertising identifier (IDFA) to personalize ads. If you deny, you still see ads, but they are non-personalized. See <a href="https://policies.google.com/technologies/ads">Google's ad policies</a>.</p>
 
 <h2 id="children">9. Children</h2>
@@ -198,7 +183,7 @@
 <p>Shepherd is a business-to-business service used by churches. A church may store information about minors (for example a child's name, photo, birthday, grade, gender, household, and guardian relationships) as part of its pastoral-care records. <strong>Children do not register or use Shepherd themselves</strong> — all data is entered by the church's adult staff or volunteers, or synced from the church's own church-management system; Shepherd has no child-facing accounts and collects no information directly from children. For this minor data the <strong>church is the data controller</strong> and is responsible for obtaining any parental or guardian consent required by law (e.g. COPPA, or GDPR/UK GDPR children's-data rules); Everlight is a processor acting on the church's instructions. See the <a href="#shepherd">Shepherd section</a> below.</p>
 
 <h3>Other Apps</h3>
-<p>Halcyon, Persue Bible, Persue Prayer, Regen, and WordFind are not directed to children under 13 and do not knowingly collect personal information from children under 13. If we learn we have inadvertently collected such information, we will delete it.</p>
+<p>Halcyon and Regen are not directed to children under 13 and do not knowingly collect personal information from children under 13. If we learn we have inadvertently collected such information, we will delete it.</p>
 
 <p>Parents who believe a child has provided personal information should contact <a href="mailto:brendan@everlight-digital.com">brendan@everlight-digital.com</a>.</p>
 
@@ -285,14 +270,15 @@ Website: <a href="https://everlight-digital.com">everlight-digital.com</a></p>
 <h2 id="addenda">App-Specific Addenda</h2>
 <p>For details specific to a single app, see:</p>
 <ul>
-  <li><a href="https://shepherd.everlight-digital.com/privacy">Shepherd</a> — church-controller model, pastoral data, minors, SMS, sub-processors</li>
+  <li><a href="/chrona/privacy">Chrona: Calendar &amp; Tasks</a> — on-device and private iCloud; optional AI text capture</li>
+  <li><a href="/halcyon/privacy">Halcyon Weather</a> — location, ads, ATT</li>
   <li><a href="/olive/privacy">Olive</a> — household sharing, AI proxy, Kid Mode, analytics opt-out</li>
-  <li><a href="/halcyon/privacy">Halcyon</a> — location, ads, ATT</li>
-  <li><a href="/tally/">Tally</a> — solo or couples budgeting via CloudKit, optional Plaid bank linking, no advertising</li>
-  <li><a href="/persue-bible/privacy">Persue Bible</a> — Firebase Auth + CloudKit data</li>
-  <li><a href="/persue-prayer/privacy">Persue Prayer</a> — sensitive content handling, biometric lock</li>
+  <li><a href="/pilgrim/privacy">Pilgrim: Bible</a> — optional account; reading, notes, and prayers on device or synced when you sign in</li>
+  <li><a href="/prayerlist/privacy">Pilgrim: Prayer List</a> — on-device and private iCloud; no Everlight account</li>
   <li><a href="/regen/privacy">Regen</a> — HealthKit on-device only</li>
-  <li><a href="/wordfind/privacy">WordFind</a> — local-only game data</li>
+  <li><a href="/scorekeep/privacy">Scorekeep</a> — on-device and private iCloud; no account</li>
+  <li><a href="https://shepherd.everlight-digital.com/privacy">Shepherd</a> — church-controller model, pastoral data, minors, SMS, sub-processors</li>
+  <li><a href="/uncap/privacy">Uncap</a> — on-device dictation; no account</li>
 </ul>
 
 </main>
