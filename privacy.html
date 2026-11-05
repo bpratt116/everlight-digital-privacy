@@ -145,8 +145,8 @@
   <tr><td>Apple (Sign in with Apple, App Store, Push Notifications, CloudKit, HealthKit, WeatherKit)</td><td>Auth, distribution, push, sync, health data, weather data</td><td>All</td></tr>
   <tr><td>Google Firebase (Authentication, Firestore, Cloud Functions, Crashlytics, Analytics)</td><td>Auth, sync, AI proxy, crash reporting, analytics</td><td>Olive, Persue Bible, Persue Prayer (in migration)</td></tr>
   <tr><td>Anthropic (Claude API, accessed via our Cloud Functions proxy)</td><td>AI responses</td><td>Olive</td></tr>
-  <tr><td>Google Firebase (Cloud Functions, Firestore)</td><td>Regen cloud coaching. The numeric summary in <a href="#health">Section 5</a> is sent to a Cloud Function over TLS and is tied to the user's account. Firestore stores Coach Notes under that account. Chat messages are not stored. Apple Health readings are not synced to the account.</td><td>Regen</td></tr>
-  <tr><td>Anthropic (Claude API, via the Regen Cloud Function)</td><td>Generates Regen coaching from the numeric summary in <a href="#health">Section 5</a>. The summary is sent over TLS and is tied to the user's account.</td><td>Regen</td></tr>
+  <tr><td>Google Firebase (Cloud Functions, Firestore)</td><td>Regen cloud coaching, only after you turn it on. The numeric summary in <a href="#health">Section 5</a> is sent to a Cloud Function over TLS and is tied to the user's account. Firestore stores Coach Notes under that account. Chat messages are not stored. Apple Health readings are not synced to the account.</td><td>Regen</td></tr>
+  <tr><td>Anthropic (Claude API, via the Regen Cloud Function)</td><td>Generates Regen coaching from the numeric summary in <a href="#health">Section 5</a>, only after you turn cloud coaching on. The summary is sent over TLS and is tied to the user's account.</td><td>Regen</td></tr>
   <tr><td>RevenueCat</td><td>Subscription management</td><td>Apps with subscriptions</td></tr>
   <tr><td>Google AdMob</td><td>Advertising</td><td>Halcyon (and WordFind if/when ads enabled)</td></tr>
   <tr><td>RainViewer</td><td>Radar tile data</td><td>Halcyon</td></tr>
@@ -165,7 +165,7 @@
 <p>Anthropic API keys are <strong>never</strong> shipped inside our iOS apps; AI requests are routed through a secured Cloud Functions proxy hosted on Google Firebase.</p>
 
 <h2 id="health">5. Health and Sensitive Data</h2>
-<p>Apple Health readings, GPS routes, and logged lifting weights stay on your device and are not synced to your account. If you are signed in and use cloud coaching (chat, weekly review, insights, or Coach Notes), a numeric summary of your recent health data (HRV, resting heart rate, sleep hours, workout duration, heart rate, distance, and effort, and your recovery score) is sent to our server and to our AI provider, Anthropic, to generate your coaching. On Pro, Elite, and Founder plans, the weekly review sends this summary automatically on Mondays when you open the app. Coach Notes are saved to your account; chat messages are not.</p>
+<p>Health data is sent only after you turn cloud coaching on. If you are signed in and have turned it on, a numeric summary of your recent health data (HRV, resting heart rate, sleep hours, workout duration, heart rate, distance, effort, and recovery score) is sent to Everlight Digital's server and to our AI provider, Anthropic, to generate your coaching, when you use cloud coaching (chat, weekly review, insights, or Coach Notes). On Pro, Elite, and Founder plans, the weekly review sends this summary automatically on Mondays when you open the app, and only while cloud coaching is on. You can turn it off at any time in Settings, which stops further sends. Apple Health readings, GPS routes, and logged lifting weights stay on your device and are not synced to your account. Coach Notes are saved to your account; chat messages are not.</p>
 <p>That summary travels over TLS and is tied to your account.</p>
 <p>You can revoke HealthKit access at any time in <em>iOS Settings &gt; Privacy &amp; Security &gt; Health &gt; Regen</em>.</p>
 <p>Persue Prayer's mortification (sin tracking) entries and accountability check-ins are sensitive personal-reflection content. They are excluded from Spotlight indexing and stored in your private iCloud (CloudKit) container.</p>
@@ -294,7 +294,7 @@ Website: <a href="https://everlight-digital.com">everlight-digital.com</a></p>
   <li><a href="/tally/">Tally</a> — solo or couples budgeting via CloudKit, optional Plaid bank linking, no advertising</li>
   <li><a href="/persue-bible/privacy">Persue Bible</a> — Firebase Auth + CloudKit data</li>
   <li><a href="/persue-prayer/privacy">Persue Prayer</a> — sensitive content handling, biometric lock</li>
-  <li><a href="/regen/privacy">Regen</a> — Apple Health readings stay on the device; cloud coaching sends a numeric summary</li>
+  <li><a href="/regen/privacy">Regen</a> — Apple Health readings stay on the device; a numeric summary is sent only after you turn cloud coaching on</li>
   <li><a href="/wordfind/privacy">WordFind</a> — local-only game data</li>
 </ul>
 

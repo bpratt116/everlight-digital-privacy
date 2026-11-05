@@ -56,7 +56,7 @@
   <li><strong>Device / diagnostic data:</strong> Device model, iOS version, watchOS version, app version, and crash logs.</li>
 </ul>
 
-<p>Apple Health readings, GPS routes, and logged lifting weights stay on your device and are not synced to your account. If you are signed in and use cloud coaching (chat, weekly review, insights, or Coach Notes), a numeric summary of your recent health data (HRV, resting heart rate, sleep hours, workout duration, heart rate, distance, and effort, and your recovery score) is sent to our server and to our AI provider, Anthropic, to generate your coaching. On Pro, Elite, and Founder plans, the weekly review sends this summary automatically on Mondays when you open the app. Coach Notes are saved to your account; chat messages are not. That summary travels over TLS and is tied to your account.</p>
+<p>Health data is sent only after you turn cloud coaching on. If you are signed in and have turned it on, a numeric summary of your recent health data (HRV, resting heart rate, sleep hours, workout duration, heart rate, distance, effort, and recovery score) is sent to Everlight Digital's server and to our AI provider, Anthropic, to generate your coaching, when you use cloud coaching (chat, weekly review, insights, or Coach Notes). On Pro, Elite, and Founder plans, the weekly review sends this summary automatically on Mondays when you open the app, and only while cloud coaching is on. You can turn it off at any time in Settings, which stops further sends. Apple Health readings, GPS routes, and logged lifting weights stay on your device and are not synced to your account. Coach Notes are saved to your account; chat messages are not. That summary travels over TLS and is tied to your account.</p>
 
 <h2>How We Use Information</h2>
 <ul>
@@ -70,9 +70,9 @@
 <ul>
   <li><strong>Apple HealthKit</strong> &mdash; read on your device, controlled by you in iOS Settings &gt; Health</li>
   <li><strong>Apple</strong> (Sign in with Apple, App Store, push notifications)</li>
-  <li><strong>Google Firebase</strong> (Authentication, Cloud Functions, Firestore) &mdash; account sign-in. When you use cloud coaching, Cloud Functions receive the numeric summary over TLS, tied to your account. Firestore stores Coach Notes under your account. Chat messages are not stored. Apple Health readings are not synced to your account.</li>
+  <li><strong>Google Firebase</strong> (Authentication, Cloud Functions, Firestore) &mdash; account sign-in. Only after you turn cloud coaching on, Cloud Functions receive the numeric summary over TLS, tied to your account. Firestore stores Coach Notes under your account. Chat messages are not stored. Apple Health readings are not synced to your account.</li>
   <li><strong>Google Firebase Analytics</strong> &mdash; product events, with no health values and no user ID</li>
-  <li><strong>Anthropic</strong> &mdash; receives that numeric summary, via the Cloud Function, to generate your coaching</li>
+  <li><strong>Anthropic</strong> &mdash; receives that numeric summary, via the Cloud Function, to generate your coaching, only after you turn cloud coaching on</li>
 </ul>
 <p>We do not sell your data and Regen contains no advertising trackers.</p>
 
