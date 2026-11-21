@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pilgrim — Privacy Policy</title>
+<title>Pilgrim Bible — Privacy Policy</title>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -43,73 +43,93 @@
 
 <main>
 
-<h1>Pilgrim Privacy Policy</h1>
-<p class="meta">Last updated: June 8, 2026</p>
+<h1>Pilgrim Bible Privacy Policy</h1>
+<p class="meta">Last updated: November 20, 2026</p>
 
-<p>This Privacy Policy describes how Everlight Digital ("we", "us") handles information when you use the Pilgrim: Bible &amp; Prayer iOS app.</p>
+<p>This Privacy Policy describes how Everlight Digital ("we", "us") handles information when you use the Pilgrim Bible app for iPhone and iPad.</p>
+<p>Prayer lists are no longer part of Pilgrim Bible. They now live in a separate app, <a href="/apps/prayerlist">Pilgrim: Prayer List</a>, which has <a href="/prayerlist/privacy.html">its own privacy policy</a>. See "Prayer data from earlier versions" below.</p>
 
 <h2>Accounts &amp; Sign-In</h2>
-<p>Pilgrim works fully without an account — your reading, highlights, notes, and prayers live on your device. If you want to sync across your devices, or connect with friends and groups, you can create a free account. You can sign in two ways:</p>
+<p>Pilgrim works fully without an account. Your reading, highlights, and notes live on your device. If you want to sync across your devices, read a plan with someone, or use the friends and challenge features, you can create a free account. You can sign in three ways:</p>
 <ul>
-  <li><strong>Email</strong> — we send a 6-digit code to your email address to sign you in; there is no password.</li>
-  <li><strong>Sign in with Apple</strong> — Apple shares a private identifier with us instead of your real email. You may choose to hide your email through Apple's relay.</li>
+  <li><strong>Email</strong>: we send a 6-digit code to your email address to sign you in. There is no password.</li>
+  <li><strong>Sign in with Apple</strong>: Apple shares a private identifier with us instead of your real email. You may choose to hide your email through Apple's relay.</li>
+  <li><strong>Passkey</strong>: your device stores the passkey. We store only its public key, which cannot be used to sign in as you.</li>
 </ul>
 <p>You can use the app indefinitely without ever creating an account.</p>
 
-<h2>What We Collect</h2>
-<p>When you sign in, the following is stored on our servers (operated for us by Railway — see Third-Party Services):</p>
+<h2>What We Collect When You Sign In</h2>
+<p>When you sign in, the following is stored on our servers (operated for us by Railway; see Third-Party Services):</p>
 <ul>
-  <li><strong>Email address or Apple identifier</strong> — used only to sign you in and, for email sign-in, to send your one-time login codes.</li>
-  <li><strong>An account identifier</strong> — a user ID we generate to associate your synced data with your account.</li>
-  <li><strong>Your synced content</strong> — the highlights, Bible notes, sermon notes, prayer requests, journal entries, saved plans, reading-plan progress, and memory-card progress you create. This is stored so it can sync to your other devices.</li>
-  <li><strong>Profile</strong> — if you use the community features, an optional display name, short bio, and profile photo so friends and group members can recognize you.</li>
-  <li><strong>Friends, groups &amp; shared content</strong> — if you add a friend, join or create a group, or share a reading plan or prayer list, we store those connections, the invite codes used, and the items you chose to share so the people you shared with can see them.</li>
-  <li><strong>PDF attachments</strong> — if you attach a PDF to a prayer request, the file is stored so you (and anyone you shared it with) can open it.</li>
-  <li><strong>Device push token</strong> — if you enable notifications for shared prayer-time reminders, we store the Apple-issued push token for your device so we can send those reminders.</li>
+  <li><strong>Email address or Apple identifier</strong>: used only to sign you in and, for email sign-in, to send your one-time login codes.</li>
+  <li><strong>An account identifier</strong>: a user ID we generate to associate your synced data with your account.</li>
+  <li><strong>Your synced content</strong>: the highlights, verse marks, Bible notes, sermon notes, journal notes, saved and custom reading plans, plan progress, Bible memory progress, and challenge check-ins you create. This is stored so it can sync to your other devices.</li>
+  <li><strong>Profile</strong>: if you use the friends features, an optional display name, short bio, and profile photo so friends can recognize you.</li>
+  <li><strong>Friends, shared plans &amp; challenges</strong>: if you add a friend, join a group, invite someone onto a reading plan, or start a challenge with a friend, we store those connections, the invite codes used, and what you chose to share. Notes you write on a shared plan day can be read only by the people on that plan. In a challenge, your partner sees only what you choose to show them.</li>
+  <li><strong>Reports</strong>: if you report or block someone, we store that report so we can review it.</li>
+  <li><strong>Device push token</strong>: if you allow notifications, we store the Apple-issued push token for your device so we can tell you about plan invites, a friend's encouragement, and similar activity.</li>
 </ul>
-<p>We collect <strong>no</strong> analytics, advertising data, location, contacts, browsing history, or device tracking identifiers.</p>
+
+<h2>Usage Analytics &amp; Crash Reports</h2>
+<p>To understand which parts of the app are used and to fix crashes, Pilgrim sends anonymous usage events and crash reports:</p>
+<ul>
+  <li><strong>Usage events</strong> record things like opening the app, opening a book and chapter, starting or finishing a reading-plan day, opening commentary, or reviewing a memory card. They never include the text of your notes, highlights, or anything you type, and they are not linked to your account, name, or email.</li>
+  <li><strong>Crash reports</strong> record technical details about a crash (device model, iOS version, and where in the app it happened) so we can fix it.</li>
+</ul>
+<p>These are handled by TelemetryDeck and Google Firebase (see Third-Party Services). We use the version of Firebase Analytics that does not collect the advertising identifier.</p>
 
 <h2>What Stays Only on Your Device</h2>
 <ul>
-  <li>If you never sign in, none of your content leaves your device.</li>
-  <li>Personal prayer reminders (e.g. "pray at 8&nbsp;pm") are scheduled by your own device as local notifications — they are not sent to our servers. (Shared <em>group</em> prayer-time reminders are sent as push notifications, which require the device token described above.)</li>
+  <li>If you never sign in, your content never leaves your device. (Anonymous usage events and crash reports are still sent, as described above.)</li>
+  <li>Reading reminders are scheduled by your own device as local notifications and are not sent to our servers.</li>
+  <li>Reflection and study suggestions that use Apple Intelligence run on your device. Your text is not sent to us or to any AI service.</li>
+  <li>The Home Screen widget and Siri shortcuts read from data already on your device.</li>
+</ul>
+
+<h2>Prayer Data from Earlier Versions</h2>
+<p>Earlier versions of Pilgrim included prayer lists. If you used them:</p>
+<ul>
+  <li>Prayer lists already on your phone stay there until you move them to Pilgrim: Prayer List or delete the app.</li>
+  <li>If you were signed in, prayer requests, any PDF attachments, and prayer lists you shared may still be stored with your account. They are kept until you delete your account, which removes them along with everything else.</li>
 </ul>
 
 <h2>How We Use Your Information</h2>
-<p>Only to make the app work: to sign you in, sync your content between your devices, deliver the plans and prayer lists you share with friends and groups, send prayer reminders, and let you export or delete your data. We do <strong>not</strong> use it for advertising, profiling, or any purpose unrelated to providing Pilgrim.</p>
+<p>Only to make the app work and improve it: to sign you in, sync your content between your devices, deliver the plans and challenges you share with friends, send the notifications you allowed, fix crashes, understand which features are used, and let you export or delete your data. We do <strong>not</strong> use it for advertising, profiling, or any purpose unrelated to providing Pilgrim.</p>
 
 <h2>Third-Party Services</h2>
 <ul>
-  <li><strong>Railway</strong> — hosts our application server, database, and file storage (your account, synced content, groups, shared items, and attachments). Subject to <a href="https://railway.com/legal/privacy">Railway's privacy policy</a>.</li>
-  <li><strong>Resend</strong> — delivers your one-time email sign-in codes. Receives your email address for that purpose only. Subject to <a href="https://resend.com/legal/privacy-policy">Resend's privacy policy</a>.</li>
-  <li><strong>Apple</strong> — provides Sign in with Apple, and the Apple Push Notification service delivers shared group prayer-time reminders to your device. Subject to Apple's privacy policy.</li>
-  <li><strong>api.esv.org</strong> — Bible passage requests are sent through our Cloudflare Worker proxy so your IP address is not exposed to Crossway. The proxy caches responses to minimize traffic. Subject to <a href="https://www.crossway.org/privacy/">Crossway's privacy policy</a>.</li>
-  <li><strong>API.Bible</strong> (American Bible Society) — Bible passage requests for CSB / NIV / NLT translations, proxied through our Cloudflare Worker. Subject to <a href="https://scripture.api.bible/">API.Bible's terms</a>.</li>
-  <li><strong>Cloudflare</strong> — runs the Bible-API proxy Worker (no account data passes through it). Subject to <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare's privacy policy</a>.</li>
+  <li><strong>Railway</strong>: hosts our application server, database, and file storage (your account, synced content, friends, shared items, and attachments). Subject to <a href="https://railway.com/legal/privacy">Railway's privacy policy</a>.</li>
+  <li><strong>Resend</strong>: delivers your one-time email sign-in codes. Receives your email address for that purpose only. Subject to <a href="https://resend.com/legal/privacy-policy">Resend's privacy policy</a>.</li>
+  <li><strong>Apple</strong>: provides Sign in with Apple, passkeys, and the Apple Push Notification service. Subject to Apple's privacy policy.</li>
+  <li><strong>TelemetryDeck</strong>: receives anonymous usage events. It hashes the device identifier on your device before sending. Subject to <a href="https://telemetrydeck.com/privacy/">TelemetryDeck's privacy policy</a>.</li>
+  <li><strong>Google Firebase</strong> (Analytics and Crashlytics): receives anonymous usage events and crash reports. Subject to <a href="https://firebase.google.com/support/privacy">Firebase's privacy information</a>.</li>
+  <li><strong>api.esv.org</strong>: Bible passage requests are sent through our Cloudflare Worker proxy so your IP address is not exposed to Crossway. The proxy caches responses to minimize traffic. Subject to <a href="https://www.crossway.org/privacy/">Crossway's privacy policy</a>.</li>
+  <li><strong>API.Bible</strong> (American Bible Society): Bible passage requests for some translations, proxied through our Cloudflare Worker. Subject to <a href="https://scripture.api.bible/">API.Bible's terms</a>.</li>
+  <li><strong>Cloudflare</strong>: runs the Bible-API proxy Worker (no account data passes through it). Subject to <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare's privacy policy</a>.</li>
 </ul>
 
 <h2>What We Do Not Do</h2>
 <ul>
-  <li>No analytics, no telemetry, no crash-reporting SDKs</li>
   <li>No advertising and no advertising identifiers</li>
   <li>No In-App Purchase, no subscription, no payment processing</li>
-  <li>No tracking across apps or websites</li>
+  <li>No tracking across other companies' apps or websites</li>
   <li>No selling or sharing of your data with anyone, for any purpose</li>
 </ul>
 
 <h2>Your Choices &amp; Rights</h2>
 <ul>
   <li><strong>Export your data.</strong> From Pilgrim's profile, "Export my account data" downloads everything tied to your account as a JSON file.</li>
-  <li><strong>Delete your account.</strong> From Pilgrim's profile, "Delete account &amp; synced data" permanently erases your account and all of its server-stored content (synced records, your profile, groups you own, friend connections, shared items, and attachments). This cannot be undone.</li>
-  <li><strong>Sign out</strong> at any time — your local on-device data remains.</li>
+  <li><strong>Delete your account.</strong> From Pilgrim's profile, "Delete account &amp; synced data" permanently erases your account and all of its server-stored content (synced records, including any prayer data from earlier versions, your profile, groups you own, friend connections, shared items, and attachments). This cannot be undone.</li>
+  <li><strong>Notifications</strong> can be turned off at any time in iOS Settings.</li>
+  <li><strong>Sign out</strong> at any time. Your local on-device data remains.</li>
   <li><strong>Delete the app</strong> to remove all local data from your device.</li>
 </ul>
 
 <h2>Data Retention</h2>
-<p>Your synced content is kept while your account exists, so it remains available across your devices. When you delete your account, it is removed from our active systems immediately; routine encrypted backups roll off on our hosting provider's standard schedule. One-time login codes expire within minutes.</p>
+<p>Your synced content is kept while your account exists, so it remains available across your devices. When you delete your account, it is removed from our active systems immediately; routine encrypted backups roll off on our hosting provider's standard schedule. One-time login codes expire within minutes. Anonymous usage events and crash reports are kept by TelemetryDeck and Firebase under their own retention settings.</p>
 
 <h2>Children</h2>
-<p>Pilgrim is designed for adult Christians and is not directed to children under 13. We do not knowingly collect data from children.</p>
+<p>Pilgrim is designed for adults and is not directed to children under 13. We do not knowingly collect data from children.</p>
 
 <h2>Changes</h2>
 <p>If we change what we collect or how we use it, we will update this page and its "Last updated" date.</p>

@@ -44,7 +44,7 @@
 <main>
 
 <h1>Everlight Digital Privacy Policy</h1>
-<p class="meta">Last updated: May 19, 2026 &nbsp;&middot;&nbsp; Effective: May 19, 2026</p>
+<p class="meta">Last updated: November 20, 2026 &nbsp;&middot;&nbsp; Effective: May 19, 2026</p>
 
 <p>Everlight Digital LLC ("we", "us", "our") publishes a family of mobile apps and web services. This Privacy Policy explains what information we collect, how we use it, and your rights. It applies to all products we publish, including:</p>
 
@@ -111,7 +111,7 @@
 <p>Device model, iOS/iPadOS/watchOS version, app version, time zone, locale, and crash logs (via Firebase Crashlytics or Apple's standard crash reporting).</p>
 
 <h3>Usage Analytics</h3>
-<p>Anonymous event data (which screens are viewed, which features are tapped) via Firebase Analytics. Currently active in Olive only. Disabled by default until you accept the in-app prompt. Disabled at all times in Kid Mode. Other apps may add anonymous analytics in future versions, with notice.</p>
+<p>Anonymous event data (which screens are viewed, which features are tapped) via Firebase Analytics. In Olive it is disabled by default until you accept the in-app prompt, and disabled at all times in Kid Mode. Pilgrim Bible sends anonymous usage events (not linked to your account, never including your notes) through Firebase Analytics and TelemetryDeck; see the <a href="/pilgrim/privacy.html">Pilgrim addendum</a>. Other apps may add anonymous analytics in future versions, with notice.</p>
 
 <h3>Subscription and Purchase Data</h3>
 <p>Apple receives your purchase information when you subscribe via in-app purchase. RevenueCat receives a pseudonymous identifier and your subscription status to manage entitlements across devices.</p>
@@ -143,7 +143,8 @@
 <table>
   <tr><th>Provider</th><th>Purpose</th><th>Apps</th></tr>
   <tr><td>Apple (Sign in with Apple, App Store, Push Notifications, CloudKit, HealthKit, WeatherKit)</td><td>Auth, distribution, push, sync, health data, weather data</td><td>All</td></tr>
-  <tr><td>Google Firebase (Authentication, Firestore, Cloud Functions, Crashlytics, Analytics)</td><td>Auth, sync, AI proxy, crash reporting, analytics</td><td>Olive, Persue Bible, Persue Prayer (in migration)</td></tr>
+  <tr><td>Google Firebase (Authentication, Firestore, Cloud Functions, Crashlytics, Analytics)</td><td>Auth, sync, AI proxy, crash reporting, analytics</td><td>Olive, Pilgrim Bible (Analytics, Crashlytics), Persue Bible, Persue Prayer (in migration)</td></tr>
+  <tr><td>TelemetryDeck</td><td>Anonymous usage analytics</td><td>Pilgrim Bible</td></tr>
   <tr><td>Anthropic (Claude API, accessed via our Cloud Functions proxy)</td><td>AI responses</td><td>Olive</td></tr>
   <tr><td>RevenueCat</td><td>Subscription management</td><td>Apps with subscriptions</td></tr>
   <tr><td>Google AdMob</td><td>Advertising</td><td>Halcyon (and WordFind if/when ads enabled)</td></tr>
