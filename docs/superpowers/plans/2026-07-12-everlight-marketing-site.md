@@ -10,9 +10,9 @@
 
 ## Global Constraints
 
-- Brand locked: gradient `#F5B042`→`#EE5A6F`→`#7C3AED` (135deg), never recolor; font Manrope; beacon mark + "everlight DIGITAL" lockup; tagline "Calm, honest software."
+- Brand locked: gradient `#F5B042`→`#EE5A6F`→`#7C3AED` (135deg), never recolor; font Manrope; beacon mark + "everlight DIGITAL" lockup; tagline "Quiet, honest software."
 - Neutrals from existing tokens only (`--el-ink #0E0B14` … `--el-paper #FFFFFF`).
-- Positioning sub-headline verbatim: "A one-person studio building calm, honest software for faith, family, and the everyday."
+- Positioning sub-headline verbatim: "A one-person studio building quiet, honest software for faith, family, and the everyday."
 - Featured apps = exactly these 5: Pilgrim, Shepherd, EventFlow, Pasture, Regen. **Clarity must NOT appear anywhere.**
 - No external asset hosts — all icons/screenshots self-hosted in repo. Missing screenshot → gradient placeholder, never a broken `<img>`.
 - Every page loads `/brand/site.css`. No per-page `<style>` blocks except tiny page-scoped tweaks.
@@ -29,7 +29,7 @@ apps/eventflow.html              CREATE
 apps/pasture.html                CREATE
 apps/regen.html                  CREATE
 journal/index.html               CREATE — article index
-journal/why-calm-software.html   CREATE
+journal/why-honest-software.html   CREATE
 journal/building-shepherd.html   CREATE
 journal/six-apps-in-a-year.html  CREATE
 journal/pilgrim-no-guilt.html    CREATE
@@ -395,10 +395,10 @@ Full file (swap each `icon.*` extension to match Task 4's inventory):
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Everlight Digital — Calm, honest software</title>
-<meta name="description" content="A one-person studio building calm, honest software for faith, family, and the everyday. Makers of Pilgrim, Shepherd, EventFlow, Pasture, and Regen.">
-<meta property="og:title" content="Everlight Digital — Calm, honest software">
-<meta property="og:description" content="A one-person studio building calm, honest software for faith, family, and the everyday.">
+<title>Everlight Digital — Quiet, honest software</title>
+<meta name="description" content="A one-person studio building quiet, honest software for faith, family, and the everyday. Makers of Pilgrim, Shepherd, EventFlow, Pasture, and Regen.">
+<meta property="og:title" content="Everlight Digital — Quiet, honest software">
+<meta property="og:description" content="A one-person studio building quiet, honest software for faith, family, and the everyday.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://everlight-digital.com/">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -424,8 +424,8 @@ Full file (swap each `icon.*` extension to match Task 4's inventory):
 
 <section class="el-hero">
   <img class="lockup" src="/brand/lockup-gradient.svg" alt="Everlight Digital">
-  <p class="tagline">Calm, honest software.</p>
-  <p class="sub">A one-person studio building calm, honest software for faith, family, and the everyday.</p>
+  <p class="tagline">Quiet, honest software.</p>
+  <p class="sub">A one-person studio building quiet, honest software for faith, family, and the everyday.</p>
   <div class="el-hero__cta">
     <a class="btn btn--onlight" href="#apps">See what we build</a>
     <a class="btn btn--ghost" href="mailto:brendan@everlight-digital.com">Work with us</a>
@@ -489,7 +489,7 @@ Full file (swap each `icon.*` extension to match Task 4's inventory):
     <p class="eyebrow">From the journal</p>
     <h2>Writing</h2>
     <ul class="journal-list">
-      <li class="journal-item"><a href="/journal/why-calm-software">Why we build calm, honest software</a><p class="dek">The philosophy behind everything Everlight makes.</p></li>
+      <li class="journal-item"><a href="/journal/why-honest-software">Why we build quiet, honest software</a><p class="dek">The philosophy behind everything Everlight makes.</p></li>
       <li class="journal-item"><a href="/journal/building-shepherd">Building Shepherd: pastoral care software churches actually use</a><p class="dek">What it takes to make software pastors trust.</p></li>
       <li class="journal-item"><a href="/journal/six-apps-in-a-year">What we learned shipping six apps in a year</a><p class="dek">Notes from a one-person studio.</p></li>
     </ul>
@@ -501,7 +501,7 @@ Full file (swap each `icon.*` extension to match Task 4's inventory):
   <div class="wrap" style="max-width:680px;text-align:center">
     <p class="eyebrow">Our philosophy</p>
     <h2>Software that respects you</h2>
-    <p style="font-size:19px;color:var(--el-stone)">No dark patterns. No manipulation. No selling your data. We build calm, honest tools that do their job and get out of your way — and we charge a fair price instead of mining your attention.</p>
+    <p style="font-size:19px;color:var(--el-stone)">No dark patterns. No manipulation. No selling your data. We build quiet, honest tools that do their job and get out of your way — and we charge a fair price instead of mining your attention.</p>
   </div>
 </section>
 
@@ -604,7 +604,7 @@ git commit -m "feat: studio marketing homepage"
   <p class="eyebrow">Who it's for</p>
   <p style="font-size:19px;color:var(--el-stone)">WHO_ITS_FOR</p>
   <div class="made-by">
-    <p style="margin:0 0 12px">Made by <a href="/">Everlight Digital</a> — calm, honest software.</p>
+    <p style="margin:0 0 12px">Made by <a href="/">Everlight Digital</a> — quiet, honest software.</p>
     <a class="btn btn--primary" href="CTA_URL">CTA_LABEL</a>
   </div>
   <p><a href="PRIVACY_URL">NAME privacy policy</a></p>
@@ -665,7 +665,7 @@ git commit -m "feat: 5 per-app story pages"
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Journal — Everlight Digital</title>
-<meta name="description" content="Notes on building calm, honest software — from the one-person studio behind Pilgrim, Shepherd, and more.">
+<meta name="description" content="Notes on building quiet, honest software — from the one-person studio behind Pilgrim, Shepherd, and more.">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <meta name="theme-color" content="#0E0B14">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -680,12 +680,12 @@ git commit -m "feat: 5 per-app story pages"
 
 <section class="el-hero" style="padding:64px 24px 72px">
   <h1>Journal</h1>
-  <p class="sub">Notes on building calm, honest software.</p>
+  <p class="sub">Notes on building quiet, honest software.</p>
 </section>
 
 <section class="section"><div class="wrap" style="max-width:760px">
   <ul class="journal-list">
-    <li class="journal-item"><span class="date">July 2026</span><br><a href="/journal/why-calm-software">Why we build calm, honest software</a><p class="dek">The philosophy behind everything Everlight makes.</p></li>
+    <li class="journal-item"><span class="date">July 2026</span><br><a href="/journal/why-honest-software">Why we build quiet, honest software</a><p class="dek">The philosophy behind everything Everlight makes.</p></li>
     <li class="journal-item"><span class="date">July 2026</span><br><a href="/journal/building-shepherd">Building Shepherd: pastoral care software churches actually use</a><p class="dek">What it takes to make software pastors trust.</p></li>
     <li class="journal-item"><span class="date">July 2026</span><br><a href="/journal/six-apps-in-a-year">What we learned shipping six apps in a year</a><p class="dek">Notes from a one-person studio.</p></li>
     <li class="journal-item"><span class="date">July 2026</span><br><a href="/journal/pilgrim-no-guilt">Pilgrim: a Bible app without the guilt mechanics</a><p class="dek">Why streaks and shame have no place in a prayer app.</p></li>
@@ -709,7 +709,7 @@ git commit -m "feat: journal index"
 ### Task 8: Four launch articles
 
 **Files:**
-- Create: `journal/why-calm-software.html`, `journal/building-shepherd.html`, `journal/six-apps-in-a-year.html`, `journal/pilgrim-no-guilt.html`
+- Create: `journal/why-honest-software.html`, `journal/building-shepherd.html`, `journal/six-apps-in-a-year.html`, `journal/pilgrim-no-guilt.html`
 
 **Interfaces:**
 - Consumes: Task 2 CSS, Task 3 footer.
@@ -760,12 +760,12 @@ Per-article spec:
 
 | SLUG | TITLE | DATE | RELATED_APP_URL | RELATED_APP_LABEL | Body focus |
 |---|---|---|---|---|---|
-| why-calm-software | Why we build calm, honest software | July 2026 | /#apps | See what we build | Manifesto: dark patterns are the norm; Everlight's opposite bet — no manipulation, fair pricing, respect for attention. Tie to the 5 apps. |
+| why-honest-software | Why we build quiet, honest software | July 2026 | /#apps | See what we build | Manifesto: dark patterns are the norm; Everlight's opposite bet — no manipulation, fair pricing, respect for attention. Tie to the 5 apps. |
 | building-shepherd | Building Shepherd: pastoral care software churches actually use | July 2026 | https://www.pastorshepherd.com | Try Shepherd free | The problem (pastors lose track of who needs care), why existing ChMS fail small churches, how Shepherd is different. SEO: "pastoral care software", "church care". |
 | six-apps-in-a-year | What we learned shipping six apps in a year | July 2026 | /#apps | Browse the portfolio | Build-in-public: lessons on scope, shipping, one-person studio workflow across faith/church/everyday apps. |
 | pilgrim-no-guilt | Pilgrim: a Bible app without the guilt mechanics | July 2026 | https://apps.apple.com/app/pilgrim | Get Pilgrim | Why streaks/shame harm spiritual habits; Pilgrim's gentle design. If App Store URL unverified, use /apps/pilgrim.html + TODO comment. |
 
-- [ ] **Step 1: Write `why-calm-software.html`** (full template + 500–900 words).
+- [ ] **Step 1: Write `why-honest-software.html`** (full template + 500–900 words).
 - [ ] **Step 2: Write `building-shepherd.html`.**
 - [ ] **Step 3: Write `six-apps-in-a-year.html`.**
 - [ ] **Step 4: Write `pilgrim-no-guilt.html`.**

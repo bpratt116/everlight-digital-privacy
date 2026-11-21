@@ -12,7 +12,7 @@ Turn everlight-digital.com from a bare privacy/legal hub into a real studio mark
 
 - No static-site-generator / build step (raw HTML + shared CSS, same as today). Revisit Astro only if the journal passes ~10 posts.
 - No CMS, no comments, no newsletter signup backend (a plain mailto/contact is enough for v1).
-- No rebrand. Gradient, Manrope, beacon mark, and "Calm, honest software." tagline are locked.
+- No rebrand. Gradient, Manrope, beacon mark, and "Quiet, honest software." tagline are locked.
 - No "coming soon" placeholder apps — feature only live/near-live products.
 
 ## Brand (locked — do not change)
@@ -20,13 +20,13 @@ Turn everlight-digital.com from a bare privacy/legal hub into a real studio mark
 - Identity gradient: amber `#F5B042` → coral `#EE5A6F` → violet `#7C3AED` (135deg). Never recolor.
 - Font: Manrope.
 - Beacon mark (chevron) + "everlight DIGITAL" lockup — `/brand/*.svg`.
-- Tagline: "Calm, honest software."
+- Tagline: "Quiet, honest software."
 - Neutrals already defined in `/brand/site.css` (`--el-ink #0E0B14` … `--el-paper #FFFFFF`).
 
 ## Positioning
 
 Homepage sub-headline (approved, verbatim):
-> A one-person studio building calm, honest software for faith, family, and the everyday.
+> A one-person studio building quiet, honest software for faith, family, and the everyday.
 
 ## Architecture
 
@@ -54,7 +54,7 @@ Every page loads `/brand/site.css` (extended, not replaced) so type/color/layout
 
 Sections top→bottom:
 
-1. **Hero** — beacon lockup, tagline "Calm, honest software.", positioning sub-headline (above), two CTAs: primary *See what we build* (→ #apps), secondary *Work with us* (→ mailto `brendan@everlight-digital.com` for v1). Gradient background band.
+1. **Hero** — beacon lockup, tagline "Quiet, honest software.", positioning sub-headline (above), two CTAs: primary *See what we build* (→ #apps), secondary *Work with us* (→ mailto `brendan@everlight-digital.com` for v1). Gradient background band.
 2. **What we build** — three pillars, each a short blurb:
    - Faith & habit apps (Pilgrim, Regen)
    - Church & organization software (Shepherd, EventFlow, Pasture)
@@ -62,7 +62,7 @@ Sections top→bottom:
 3. **Featured apps** (`#apps`) — responsive card grid, curated live set only. Each card: app icon, name, one-line tagline, platform badge → links to its story page.
 4. **SaaS funnel band** — visually distinct band featuring the three paid web products with direct "start free" CTAs to their live domains. This is the paying-customer conversion path.
 5. **From the journal** — teaser of latest 3 articles → `/journal/`.
-6. **Philosophy strip** — the ethos: calm, honest, no dark patterns, privacy-respecting. Short.
+6. **Philosophy strip** — the ethos: quiet, honest, no dark patterns, privacy-respecting. Short.
 7. **Footer** — contact `brendan@everlight-digital.com`; legal links (Privacy, Terms, Support); per-app privacy index; copyright.
 
 ### 2. Per-app story page (`/apps/<slug>.html`)
@@ -94,7 +94,7 @@ Curated live set (v1):
 - **Article template** (`/journal/<slug>.html`) — title, date, body (long-form HTML), related-app CTA at the end. Optimized for SEO (semantic headings, meta description, Open Graph tags).
 
 Launch set (v1, ~4 posts so the section isn't empty):
-1. `why-calm-software` — Why we build calm, honest software (studio manifesto / brand story).
+1. `why-honest-software` — Why we build quiet, honest software (studio manifesto / brand story).
 2. `building-shepherd` — Building Shepherd: pastoral care software churches actually use (SEO + Shepherd funnel).
 3. `six-apps-in-a-year` — What we learned shipping six apps in a year (build-in-public).
 4. `pilgrim-no-guilt` — Pilgrim: a Bible app without the guilt mechanics (SEO + Pilgrim funnel).
